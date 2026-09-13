@@ -1,0 +1,14 @@
+D:\PATERNS\theoryCrafting\theoryCrafting\bin\Debug\net8.0\theoryCrafting.exe
+D:\PATERNS\theoryCrafting\theoryCrafting\bin\Debug\net8.0\theoryCrafting.deps.json
+D:\PATERNS\theoryCrafting\theoryCrafting\bin\Debug\net8.0\theoryCrafting.runtimeconfig.json
+D:\PATERNS\theoryCrafting\theoryCrafting\bin\Debug\net8.0\theoryCrafting.dll
+D:\PATERNS\theoryCrafting\theoryCrafting\bin\Debug\net8.0\theoryCrafting.pdb
+D:\PATERNS\theoryCrafting\theoryCrafting\obj\Debug\net8.0\theoryCrafting.GeneratedMSBuildEditorConfig.editorconfig
+D:\PATERNS\theoryCrafting\theoryCrafting\obj\Debug\net8.0\theoryCrafting.AssemblyInfoInputs.cache
+D:\PATERNS\theoryCrafting\theoryCrafting\obj\Debug\net8.0\theoryCrafting.AssemblyInfo.cs
+D:\PATERNS\theoryCrafting\theoryCrafting\obj\Debug\net8.0\theoryCrafting.csproj.CoreCompileInputs.cache
+D:\PATERNS\theoryCrafting\theoryCrafting\obj\Debug\net8.0\theoryCrafting.dll
+D:\PATERNS\theoryCrafting\theoryCrafting\obj\Debug\net8.0\refint\theoryCrafting.dll
+D:\PATERNS\theoryCrafting\theoryCrafting\obj\Debug\net8.0\theoryCrafting.pdb
+D:\PATERNS\theoryCrafting\theoryCrafting\obj\Debug\net8.0\theoryCrafting.genruntimeconfig.cache
+D:\PATERNS\theoryCrafting\theoryCrafting\obj\Debug\net8.0\ref\theoryCrafting.dll

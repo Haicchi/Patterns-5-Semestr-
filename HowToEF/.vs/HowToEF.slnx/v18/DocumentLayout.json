@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PATERNS\\HowToEF\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|d:\\paterns\\howtoef\\howtoef\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|solutionrelative:howtoef\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|d:\\paterns\\howtoef\\howtoef\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|solutionrelative:howtoef\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\PATERNS\\HowToEF\\HowToEF\\Migrations\\20260908102650_InitialSetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HowToEF\\Migrations\\20260908102650_InitialSetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|d:\\paterns\\howtoef\\howtoef\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|solutionrelative:howtoef\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|d:\\paterns\\howtoef\\howtoef\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|solutionrelative:howtoef\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|d:\\paterns\\howtoef\\howtoef\\migrations\\20260907135559_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8DB27A9-783D-714A-A7B2-D59FB3CF7E12}|HowToEF\\HowToEF.csproj|solutionrelative:howtoef\\migrations\\20260907135559_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20260908102650_InitialSetup.cs",
+              "DocumentMoniker": "D:\\PATERNS\\HowToEF\\HowToEF\\Migrations\\20260908102650_InitialSetup.cs",
+              "RelativeDocumentMoniker": "HowToEF\\Migrations\\20260908102650_InitialSetup.cs",
+              "ToolTip": "D:\\PATERNS\\HowToEF\\HowToEF\\Migrations\\20260908102650_InitialSetup.cs",
+              "RelativeToolTip": "HowToEF\\Migrations\\20260908102650_InitialSetup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-08T10:26:50.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\PATERNS\\HowToEF\\HowToEF\\Booking.cs",
+              "RelativeDocumentMoniker": "HowToEF\\Booking.cs",
+              "ToolTip": "D:\\PATERNS\\HowToEF\\HowToEF\\Booking.cs",
+              "RelativeToolTip": "HowToEF\\Booking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-08T10:02:24.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\PATERNS\\HowToEF\\HowToEF\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "HowToEF\\AppDbContext.cs",
+              "ToolTip": "D:\\PATERNS\\HowToEF\\HowToEF\\AppDbContext.cs",
+              "RelativeToolTip": "HowToEF\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T13:52:54.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\PATERNS\\HowToEF\\HowToEF\\User.cs",
+              "RelativeDocumentMoniker": "HowToEF\\User.cs",
+              "ToolTip": "D:\\PATERNS\\HowToEF\\HowToEF\\User.cs",
+              "RelativeToolTip": "HowToEF\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T13:47:00.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\PATERNS\\HowToEF\\HowToEF\\Program.cs",
+              "RelativeDocumentMoniker": "HowToEF\\Program.cs",
+              "ToolTip": "D:\\PATERNS\\HowToEF\\HowToEF\\Program.cs",
+              "RelativeToolTip": "HowToEF\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T13:39:36.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20260907135559_InitialCreate.cs",
+              "DocumentMoniker": "D:\\PATERNS\\HowToEF\\HowToEF\\Migrations\\20260907135559_InitialCreate.cs",
+              "RelativeDocumentMoniker": "HowToEF\\Migrations\\20260907135559_InitialCreate.cs",
+              "ToolTip": "D:\\PATERNS\\HowToEF\\HowToEF\\Migrations\\20260907135559_InitialCreate.cs",
+              "RelativeToolTip": "HowToEF\\Migrations\\20260907135559_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T13:55:59.899Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
