@@ -11,6 +11,6 @@ namespace Lab1.Model
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string JournalistName { get; set; } = string.Empty;
-        public int NewspaperId { get; set; }
+
     }
 }

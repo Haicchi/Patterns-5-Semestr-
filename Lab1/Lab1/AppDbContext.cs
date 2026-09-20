@@ -17,7 +17,7 @@ namespace Lab1
         public DbSet<NewspaperColumn> NewspaperColumns { get; set; }
         public DbSet<Almanac> Almanacs { get; set; }
 
-        public DbSet<AlmanacBook> AlmanacBooks {  get; set; }
+        
 
         public AppDbContext()
         {
@@ -43,7 +43,14 @@ namespace Lab1
             modelBuilder.Entity<Newspaper>().ToTable("Newspapers");
             modelBuilder.Entity<Almanac>().ToTable("Almanacs");
             modelBuilder.Entity<NewspaperColumn>().ToTable("NewspaperColumns");
-            modelBuilder.Entity<AlmanacBook>().ToTable("AlmanacBooks");
+            modelBuilder.Entity<Almanac>()
+                .HasMany(a => a.Books)
+                .WithMany()
+                .UsingEntity(j => j.ToTable("AlmanacBooksJoin"));
+            modelBuilder.Entity<Newspaper>()
+                .HasMany(n => n.Columns)
+                .WithMany()
+                .UsingEntity(j => j.ToTable("NewspaperColumnsJoin"));
             modelBuilder.Entity<Newspaper>().Navigation(n => n.Columns).AutoInclude();
             modelBuilder.Entity<Almanac>().Navigation(a => a.Books).AutoInclude();
         }

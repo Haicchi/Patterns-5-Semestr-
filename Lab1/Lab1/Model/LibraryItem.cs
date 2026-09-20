@@ -12,6 +12,8 @@ namespace Lab1.Model
         public string Title { get; set; } = string.Empty;
         public int PublishYear { get; set; }
         public string Publisher { get; set; } = string.Empty;
+
+        public abstract IEnumerable<string> GetContributors();
     }
 
 }

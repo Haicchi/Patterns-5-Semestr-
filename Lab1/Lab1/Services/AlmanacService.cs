@@ -10,15 +10,31 @@ namespace Lab1.Services
     public class AlmanacService : IAlmanacService
     {
         private readonly ILibraryRepository _repository;
+        private readonly ILibraryItemValidator _validator;
 
-        public AlmanacService(ILibraryRepository repository)
+        public AlmanacService(ILibraryRepository repository, ILibraryItemValidator validator)
         {
             _repository = repository;
+            _validator = validator;
         }
 
-        public async Task<Almanac> CreateAlmanacAsync(string title, string genre, int year, string publisher, int pageCount, List<AlmanacBook>? initialBooks = null)
+        public async Task<Almanac> CreateAlmanacAsync(string title, string genre, int year, string publisher, int pageCount, List<Book>? initialBooks = null)
         {
-            ValidateAlmanacData(title, genre, year, publisher, pageCount);
+            var (isValidBase, errorBase) = _validator.ValidateBaseItem(title, publisher, year);
+            if (!isValidBase)
+            {
+                throw new ArgumentException(errorBase);
+            }
+
+            if (string.IsNullOrWhiteSpace(genre))
+            {
+                throw new ArgumentException("Жанр альманаху не може бути порожнім.", nameof(genre));
+            }
+
+            if (pageCount <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(pageCount), "Кількість сторінок має бути більшою за нуль.");
+            }
 
             var almanac = new Almanac
             {
@@ -27,59 +43,100 @@ namespace Lab1.Services
                 PublishYear = year,
                 Publisher = publisher.Trim(),
                 PageCount = pageCount,
-                Books = initialBooks ?? new List<AlmanacBook>()
+                Books = initialBooks ?? new List<Book>()
             };
 
             await _repository.AddAsync(almanac);
             return almanac;
         }
 
-        public async Task UpdateAlmanacAsync(int id, string title, string genre, int year, string publisher, int pageCount)
+        public async Task AddExistingBookToAlmanacAsync(int almanacId, int bookId)
         {
-            ValidateAlmanacData(title, genre, year, publisher, pageCount);
+            var almanac = await GetAlmanacOrThrowAsync(almanacId);
 
-            var almanac = await GetAlmanacOrThrowAsync(id);
+            var item = await _repository.GetByIdAsync(bookId);
+            if (item == null)
+            {
+                throw new KeyNotFoundException($"Книгу з ID {bookId} не знайдено.");
+            }
 
-            almanac.Title = title.Trim();
-            almanac.Genre = genre.Trim();
-            almanac.PublishYear = year;
-            almanac.Publisher = publisher.Trim();
-            almanac.PageCount = pageCount;
+            if (item is not Book book)
+            {
+                throw new InvalidOperationException($"Елемент з ID {bookId} не є книгою.");
+            }
 
-            await _repository.UpdateAsync(almanac);
+            if (!almanac.Books.Any(b => b.Id == bookId))
+            {
+                almanac.Books.Add(book);
+                await _repository.UpdateAsync(almanac);
+            }
         }
 
         public async Task AddBookToAlmanacAsync(int almanacId, string bookTitle, string author)
         {
-            if (string.IsNullOrWhiteSpace(bookTitle))
-                throw new ArgumentException("Назва твору не може бути порожньою.", nameof(bookTitle));
-
-            if (string.IsNullOrWhiteSpace(author))
-                throw new ArgumentException("Автор твору не може бути порожнім.", nameof(author));
-
             var almanac = await GetAlmanacOrThrowAsync(almanacId);
 
-            var newBook = new AlmanacBook
+            var (isValid, error) = _validator.ValidateBook(bookTitle, almanac.Publisher, almanac.PublishYear, author, almanac.Genre, 1);
+            if (!isValid)
+            {
+                throw new ArgumentException(error);
+            }
+
+            var newBook = new Book
             {
                 Title = bookTitle.Trim(),
-                Author = author.Trim()
+                Author = author.Trim(),
+                Publisher = almanac.Publisher,
+                PublishYear = almanac.PublishYear,
+                Genre = almanac.Genre,
+                PageCount = 1
             };
 
             almanac.Books.Add(newBook);
             await _repository.UpdateAsync(almanac);
         }
 
-        public async Task RemoveBookFromAlmanacAsync(int almanacId, int almanacBookId)
+        public async Task UpdateAlmanacAsync(int id, string? newTitle = null, string? newGenre = null, int? newPageCount = null)
+        {
+            var almanac = await GetAlmanacOrThrowAsync(id);
+
+            var updatedTitle = newTitle?.Trim() ?? almanac.Title;
+            var updatedGenre = newGenre?.Trim() ?? almanac.Genre;
+            var updatedPages = newPageCount ?? almanac.PageCount;
+
+            var (isValidBase, errorBase) = _validator.ValidateBaseItem(updatedTitle, almanac.Publisher, almanac.PublishYear);
+            if (!isValidBase)
+            {
+                throw new ArgumentException(errorBase);
+            }
+
+            if (string.IsNullOrWhiteSpace(updatedGenre))
+            {
+                throw new ArgumentException("Жанр альманаху не може бути порожнім.", nameof(newGenre));
+            }
+
+            if (updatedPages <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(newPageCount), "Кількість сторінок має бути більшою за нуль.");
+            }
+
+            almanac.Title = updatedTitle;
+            almanac.Genre = updatedGenre;
+            almanac.PageCount = updatedPages;
+
+            await _repository.UpdateAsync(almanac);
+        }
+
+        public async Task RemoveBookFromAlmanacAsync(int almanacId, int bookId)
         {
             var almanac = await GetAlmanacOrThrowAsync(almanacId);
 
-            var bookToRemove = almanac.Books.FirstOrDefault(b => b.Id == almanacBookId);
-            if (bookToRemove == null)
+            var bookToRemove = almanac.Books.FirstOrDefault(b => b.Id == bookId);
+            if (bookToRemove != null)
             {
-                throw new KeyNotFoundException($"Твір з ID {almanacBookId} не знайдено в цьому альманасі.");
+                almanac.Books.Remove(bookToRemove);
+                await _repository.UpdateAsync(almanac);
             }
-
-            await _repository.RemoveAlmanacBookAsync(almanacBookId);
         }
 
         public async Task DeleteAlmanacAsync(int id)
@@ -103,24 +160,6 @@ namespace Lab1.Services
             }
 
             return almanac;
-        }
-
-        private static void ValidateAlmanacData(string title, string genre, int year, string publisher, int pageCount)
-        {
-            if (string.IsNullOrWhiteSpace(title))
-                throw new ArgumentException("Назва альманаху не може бути порожньою.", nameof(title));
-
-            if (string.IsNullOrWhiteSpace(genre))
-                throw new ArgumentException("Жанр альманаху не може бути порожнім.", nameof(genre));
-
-            if (string.IsNullOrWhiteSpace(publisher))
-                throw new ArgumentException("Видавництво не може бути порожнім.", nameof(publisher));
-
-            if (year < 1 || year > DateTime.UtcNow.Year)
-                throw new ArgumentOutOfRangeException(nameof(year), "Рік видання вказано некоректно.");
-
-            if (pageCount <= 0)
-                throw new ArgumentOutOfRangeException(nameof(pageCount), "Кількість сторінок має бути більшою за нуль.");
         }
     }
 }

@@ -10,15 +10,21 @@ namespace Lab1.Services
     public class NewspaperService : INewspaperService
     {
         private readonly ILibraryRepository _repository;
+        private readonly ILibraryItemValidator _validator;
 
-        public NewspaperService(ILibraryRepository repository)
+        public NewspaperService(ILibraryRepository repository, ILibraryItemValidator validator)
         {
             _repository = repository;
+            _validator = validator;
         }
 
         public async Task<Newspaper> CreateNewspaperAsync(string title, int issueNumber, DateTime releaseDate, string publisher, List<NewspaperColumn>? initialColumns = null)
         {
-            ValidateNewspaperData(title, issueNumber, releaseDate, publisher);
+            var (isValid, error) = _validator.ValidateNewspaper(title, publisher, releaseDate.Year, issueNumber, releaseDate);
+            if (!isValid)
+            {
+                throw new ArgumentException(error);
+            }
 
             var newspaper = new Newspaper
             {
@@ -34,28 +40,42 @@ namespace Lab1.Services
             return newspaper;
         }
 
-        public async Task UpdateNewspaperAsync(int id, string title, int issueNumber, DateTime releaseDate, string publisher)
+        public async Task UpdateNewspaperAsync(int id, string? newTitle = null, DateTime? newReleaseDate = null)
         {
-            ValidateNewspaperData(title, issueNumber, releaseDate, publisher);
-
             var newspaper = await GetNewspaperOrThrowAsync(id);
 
-            newspaper.Title = title.Trim();
-            newspaper.IssueNumber = issueNumber;
-            newspaper.ReleaseDate = DateTime.SpecifyKind(releaseDate, DateTimeKind.Utc);
-            newspaper.PublishYear = releaseDate.Year;
-            newspaper.Publisher = publisher.Trim();
+            var updatedTitle = newTitle?.Trim() ?? newspaper.Title;
+            var updatedDate = newReleaseDate.HasValue
+                ? DateTime.SpecifyKind(newReleaseDate.Value, DateTimeKind.Utc)
+                : newspaper.ReleaseDate;
+
+            var (isValid, error) = _validator.ValidateNewspaper(
+                updatedTitle,
+                newspaper.Publisher,
+                updatedDate.Year,
+                newspaper.IssueNumber,
+                updatedDate
+            );
+
+            if (!isValid)
+            {
+                throw new ArgumentException(error);
+            }
+
+            newspaper.Title = updatedTitle;
+            newspaper.ReleaseDate = updatedDate;
+            newspaper.PublishYear = updatedDate.Year;
 
             await _repository.UpdateAsync(newspaper);
         }
 
         public async Task AddColumnToNewspaperAsync(int newspaperId, string columnTitle, string journalist)
         {
-            if (string.IsNullOrWhiteSpace(columnTitle))
-                throw new ArgumentException("Назва колонки не може бути порожньою.", nameof(columnTitle));
-
-            if (string.IsNullOrWhiteSpace(journalist))
-                throw new ArgumentException("Ім'я журналіста не може бути порожнім.", nameof(journalist));
+            var (isValid, error) = _validator.ValidateColumn(columnTitle, journalist);
+            if (!isValid)
+            {
+                throw new ArgumentException(error);
+            }
 
             var newspaper = await GetNewspaperOrThrowAsync(newspaperId);
 
@@ -74,9 +94,12 @@ namespace Lab1.Services
             var newspaper = await GetNewspaperOrThrowAsync(newspaperId);
             var column = newspaper.Columns.FirstOrDefault(c => c.Id == columnId);
             if (column == null)
+            {
                 throw new KeyNotFoundException($"Колонку з ID {columnId} не знайдено у вказаній газеті.");
+            }
 
-            await _repository.RemoveColumnAsync(columnId);
+            newspaper.Columns.Remove(column);
+            await _repository.UpdateAsync(newspaper);
         }
 
         public async Task DeleteNewspaperAsync(int id)
@@ -100,21 +123,6 @@ namespace Lab1.Services
             }
 
             return newspaper;
-        }
-
-        private static void ValidateNewspaperData(string title, int issueNumber, DateTime releaseDate, string publisher)
-        {
-            if (string.IsNullOrWhiteSpace(title))
-                throw new ArgumentException("Назва газети не може бути порожньою.", nameof(title));
-
-            if (string.IsNullOrWhiteSpace(publisher))
-                throw new ArgumentException("Видавництво не може бути порожнім.", nameof(publisher));
-
-            if (issueNumber <= 0)
-                throw new ArgumentOutOfRangeException(nameof(issueNumber), "Номер газети має бути додатним числом.");
-
-            if (releaseDate > DateTime.UtcNow.AddDays(1))
-                throw new ArgumentException("Дата виходу газети не може бути з майбутнього.", nameof(releaseDate));
         }
     }
 }

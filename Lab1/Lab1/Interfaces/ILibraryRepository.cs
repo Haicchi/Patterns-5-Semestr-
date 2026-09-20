@@ -9,6 +9,6 @@ namespace Lab1.Interfaces
     public interface ILibraryRepository:ICatalogReader,ICatalogWriter
     {
         Task RemoveColumnAsync(int columnId);
-        Task RemoveAlmanacBookAsync(int bookId);
+        
     }
 }

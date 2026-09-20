@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Lab1.Model
 {
-    public class Almanac:LibraryItem,IHasContributors
+    public class Almanac:LibraryItem
     {
         public string Genre { get; set; } = string.Empty;
         public int PageCount { get; set; }
 
-        public List<AlmanacBook> Books { get; set; } = new();
+        public List<Book> Books { get; set; } = new();
 
-        public IEnumerable<string> GetContributors()
+        public override IEnumerable<string> GetContributors()
         {
             return Books.Select(b => b.Author).Where(a => !string.IsNullOrEmpty(a)).Distinct();
         }

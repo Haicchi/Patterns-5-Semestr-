@@ -69,14 +69,6 @@ namespace Lab1.Services
             }
         }
 
-        public async Task RemoveAlmanacBookAsync(int bookId)
-        {
-            var book = await _context.Set<AlmanacBook>().FindAsync(bookId);
-            if (book != null)
-            {
-                _context.Set<AlmanacBook>().Remove(book);
-                await _context.SaveChangesAsync();
-            }
-        }
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+using Lab1.Interfaces;
 using Lab1.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -19,12 +20,15 @@ namespace Lab1
 
             
             var repository = new LibraryRepository(context);
+            var validator = new LibraryItemValidator();
             var searchService = new LibrarySearchService(repository);
-            var bookService = new BookService(repository);
-            var newspaperService = new NewspaperService(repository);
-            var almanacService = new AlmanacService(repository);
+            var bookService = new BookService(repository,validator);
+            var newspaperService = new NewspaperService(repository,validator);
+            var almanacService = new AlmanacService(repository,validator);
             var printer = new LibraryPrinter();
-            var view = new LibraryConsoleView();
+            
+            var view = new LibraryConsoleView(validator);
+
             var randomGenerator = new LibraryRandomGenerator(bookService, newspaperService, almanacService);
 
 

@@ -21,7 +21,7 @@ namespace Lab1.Services
         {
             if (string.IsNullOrWhiteSpace(author)) return new List<LibraryItem>();
             var items = await _repository.GetAllAsync();
-            return items.Where(item => item is IHasContributors contributors && contributors.GetContributors().Any(c => c.Contains(author, StringComparison.OrdinalIgnoreCase))).ToList();
+            return items.Where(item => item.GetContributors().Any(c => c.Contains(author, StringComparison.OrdinalIgnoreCase))).ToList();
         }
 
         public async Task<List<LibraryItem>> SearchByPublisherAsync(string publisher)

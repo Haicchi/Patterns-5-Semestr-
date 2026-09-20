@@ -3,10 +3,9 @@ using Lab1.Model;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
 namespace Lab1.Services
 {
-    public class LibraryRandomGenerator:ILibraryRandomGenerator
+    public class LibraryRandomGenerator : ILibraryRandomGenerator
     {
         private static readonly Random _random = new();
         private readonly IBookService _bookService;
@@ -73,10 +72,10 @@ namespace Lab1.Services
             int year = _random.Next(1990, 2025);
             int pages = _random.Next(150, 600);
 
-            var books = new List<AlmanacBook>
+            var books = new List<Book>
             {
-                new AlmanacBook { Title = Titles[_random.Next(Titles.Length)], Author = Authors[_random.Next(Authors.Length)] },
-                new AlmanacBook { Title = Titles[_random.Next(Titles.Length)], Author = Authors[_random.Next(Authors.Length)] }
+                new Book { Title = Titles[_random.Next(Titles.Length)], Author = Authors[_random.Next(Authors.Length)] },
+                new Book { Title = Titles[_random.Next(Titles.Length)], Author = Authors[_random.Next(Authors.Length)] }
             };
 
             return await _almanacService.CreateAlmanacAsync(title, genre, year, publisher, pages, books);

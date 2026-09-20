@@ -9,15 +9,21 @@ namespace Lab1.Services
     public class BookService : IBookService
     {
         private readonly ILibraryRepository _repository;
+        private readonly ILibraryItemValidator _validator;
 
-        public BookService(ILibraryRepository repository)
+        public BookService(ILibraryRepository repository, ILibraryItemValidator validator)
         {
             _repository = repository;
+            _validator = validator;
         }
 
         public async Task<Book> CreateBookAsync(string title, string author, string genre, int year, string publisher, int pageCount)
         {
-            ValidateBookData(title, author, genre, year, publisher, pageCount);
+            var (isValid, error) = _validator.ValidateBook(title, publisher, year, author, genre, pageCount);
+            if (!isValid)
+            {
+                throw new ArgumentException(error);
+            }
 
             var book = new Book
             {
@@ -33,10 +39,43 @@ namespace Lab1.Services
             return book;
         }
 
-        public async Task UpdateBookAsync(int id, string title, string author, string genre, int year, string publisher, int pageCount)
+        public async Task UpdateBookAsync(int id, string? newTitle = null, int? newPublishYear = null, int? newPageCount = null)
         {
-            ValidateBookData(title, author, genre, year, publisher, pageCount);
+            var book = await GetBookOrThrowAsync(id);
 
+            var updatedTitle = newTitle?.Trim() ?? book.Title;
+            var updatedYear = newPublishYear ?? book.PublishYear;
+            var updatedPages = newPageCount ?? book.PageCount;
+
+            var (isValid, error) = _validator.ValidateBook(
+                updatedTitle,
+                book.Publisher,
+                updatedYear,
+                book.Author,
+                book.Genre,
+                updatedPages
+            );
+
+            if (!isValid)
+            {
+                throw new ArgumentException(error);
+            }
+
+            book.Title = updatedTitle;
+            book.PublishYear = updatedYear;
+            book.PageCount = updatedPages;
+
+            await _repository.UpdateAsync(book);
+        }
+
+        public async Task DeleteBookAsync(int id)
+        {
+            await GetBookOrThrowAsync(id);
+            await _repository.DeleteAsync(id);
+        }
+
+        private async Task<Book> GetBookOrThrowAsync(int id)
+        {
             var item = await _repository.GetByIdAsync(id);
 
             if (item == null)
@@ -49,52 +88,7 @@ namespace Lab1.Services
                 throw new InvalidOperationException($"Елемент з ID {id} не є книгою.");
             }
 
-            book.Title = title.Trim();
-            book.Author = author.Trim();
-            book.Genre = genre.Trim();
-            book.PublishYear = year;
-            book.Publisher = publisher.Trim();
-            book.PageCount = pageCount;
-
-            await _repository.UpdateAsync(book);
-        }
-
-        public async Task DeleteBookAsync(int id)
-        {
-            var item = await _repository.GetByIdAsync(id);
-
-            if (item == null)
-            {
-                throw new KeyNotFoundException($"Книгу з ID {id} не знайдено.");
-            }
-
-            if (item is not Book)
-            {
-                throw new InvalidOperationException($"Елемент з ID {id} не є книгою.");
-            }
-
-            await _repository.DeleteAsync(id);
-        }
-
-        private static void ValidateBookData(string title, string author, string genre, int year, string publisher, int pageCount)
-        {
-            if (string.IsNullOrWhiteSpace(title))
-                throw new ArgumentException("Назва книги не може бути порожньою.", nameof(title));
-
-            if (string.IsNullOrWhiteSpace(author))
-                throw new ArgumentException("Автор книги не може бути порожнім.", nameof(author));
-
-            if (string.IsNullOrWhiteSpace(genre))
-                throw new ArgumentException("Жанр книги не може бути порожнім.", nameof(genre));
-
-            if (string.IsNullOrWhiteSpace(publisher))
-                throw new ArgumentException("Видавництво не може бути порожнім.", nameof(publisher));
-
-            if (year < 1 || year > DateTime.UtcNow.Year)
-                throw new ArgumentOutOfRangeException(nameof(year), "Рік видання вказано некоректно.");
-
-            if (pageCount <= 0)
-                throw new ArgumentOutOfRangeException(nameof(pageCount), "Кількість сторінок має бути більшою за нуль.");
+            return book;
         }
     }
 }
