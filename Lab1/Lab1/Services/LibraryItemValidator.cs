@@ -7,9 +7,23 @@ using System.Threading.Tasks;
 
 namespace Lab1.Services
 {
-    public class LibraryItemValidator:ILibraryItemValidator
+    public sealed class LibraryItemValidator:ILibraryItemValidator
     {
+
         private const int MinYear = 1450;
+
+        private LibraryItemValidator() { }
+
+        private static LibraryItemValidator _instance;
+
+        public static LibraryItemValidator GetInstance()
+        {
+            if(_instance == null)
+            {
+                _instance = new LibraryItemValidator();
+            }
+            return _instance;
+        }
 
         public (bool IsValid, string? Error) ValidateBaseItem(string title, string publisher, int publishYear)
         {

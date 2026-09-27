@@ -16,6 +16,8 @@ public class LibraryAppController
     private readonly ILibraryPrinter _printer;
     private readonly ILibraryConsoleView _view;
 
+    private readonly ILibraryItemFactory _itemFactory;
+
     public LibraryAppController(
         ILibraryRepository repository,
         ILibrarySearchService searchService,
@@ -24,7 +26,8 @@ public class LibraryAppController
         IAlmanacService almanacService,
         ILibraryRandomGenerator randomGenerator,
         ILibraryPrinter printer,
-        ILibraryConsoleView view)
+        ILibraryConsoleView view,
+         ILibraryItemFactory itemFactory)
     {
         _repository = repository;
         _searchService = searchService;
@@ -34,6 +37,7 @@ public class LibraryAppController
         _randomGenerator = randomGenerator;
         _printer = printer;
         _view = view;
+        _itemFactory= itemFactory;
     }
 
     public async Task RunAsync()
@@ -73,6 +77,10 @@ public class LibraryAppController
                     case "8":
                         await HandleSearchAsync();
                         break;
+                    case "9":
+                        await HandleCloneAsync();
+                        break;
+
                     default:
                         _view.ShowError("Невідомий пункт меню.");
                         break;
@@ -88,25 +96,10 @@ public class LibraryAppController
     private async Task HandleAddAsync()
     {
         var type = _view.PromptItemType();
-        if (type == "1")
-        {
-            var d = _view.PromptBookData();
-            var b = await _bookService.CreateBookAsync(d.Title, d.Author, d.Genre, d.Year, d.Publisher, d.Pages);
-            _view.ShowSuccess($"Книгу створено з ID: {b.Id}");
-        }
-        else if (type == "2")
-        {
-            var d = _view.PromptNewspaperData();
-            var n = await _newspaperService.CreateNewspaperAsync(d.Title, d.IssueNumber, d.ReleaseDate, d.Publisher);
-            _view.ShowSuccess($"Газету створено з ID: {n.Id}");
-        }
-        else if (type == "3")
-        {
-            var d = _view.PromptAlmanacData();
-            var a = await _almanacService.CreateAlmanacAsync(d.Title, d.Genre, d.Year, d.Publisher, d.Pages);
-            _view.ShowSuccess($"Альманах створено з ID: {a.Id}");
-        }
+        var item = await _itemFactory.CreateItemAsync(type);
+        _view.ShowSuccess($"{item.GetType().Name} успішно створено з ID: {item.Id}");
     }
+
 
     private async Task HandleEditAsync()
     {
@@ -235,6 +228,28 @@ public class LibraryAppController
                 _view.ShowError("Дію скасовано або обрано невірний пункт.");
                 break;
         }
+    }
+    private async Task HandleCloneAsync()
+    {
+        int id = _view.PromptId("Введіть ID об'єкта, який хочете клонувати: ");
+        var item = await _repository.GetByIdAsync(id);
+
+        if (item == null)
+        {
+            _view.ShowError($"Об'єкт з ID {id} не знайдено.");
+            return;
+        }
+
+        LibraryItem clonedItem = item switch
+        {
+            Book book => book.Clone(),
+            Newspaper newspaper => newspaper.Clone(),
+            Almanac almanac => almanac.Clone(),
+            _ => throw new InvalidOperationException("Цей тип не підтримує клонування.")
+        };
+
+        await _repository.AddAsync(clonedItem);
+        _view.ShowSuccess($"Об'єкт успішно склоновано! Новий створений ID: {clonedItem.Id}");
     }
 
     private async Task HandleSearchAsync()
