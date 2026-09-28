@@ -1,0 +1,16 @@
+D:\PATERNS\LAB-2\LAB-2\bin\Debug\net8.0\LAB-2.exe
+D:\PATERNS\LAB-2\LAB-2\bin\Debug\net8.0\LAB-2.deps.json
+D:\PATERNS\LAB-2\LAB-2\bin\Debug\net8.0\LAB-2.runtimeconfig.json
+D:\PATERNS\LAB-2\LAB-2\bin\Debug\net8.0\LAB-2.dll
+D:\PATERNS\LAB-2\LAB-2\bin\Debug\net8.0\LAB-2.pdb
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\LAB-2.GeneratedMSBuildEditorConfig.editorconfig
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\LAB-2.AssemblyInfoInputs.cache
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\LAB-2.AssemblyInfo.cs
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\LAB-2.csproj.CoreCompileInputs.cache
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\LAB-2.sourcelink.json
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\LAB-2.dll
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\refint\LAB-2.dll
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\LAB-2.pdb
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\LAB-2.genruntimeconfig.cache
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\ref\LAB-2.dll
+D:\PATERNS\LAB-2\LAB-2\obj\Debug\net8.0\LAB-2.csproj.Up2Date

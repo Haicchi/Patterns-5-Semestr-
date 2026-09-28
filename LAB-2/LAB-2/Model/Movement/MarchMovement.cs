@@ -11,7 +11,7 @@ namespace LAB_2.Model.Movement
     {
         public MovementType Type => MovementType.March;
 
-        public string Desc => "Піший ход (Людина)";
+        public string Desc => "Піший ход";
 
         public int MoveDistance => 2;
 

@@ -9,17 +9,22 @@ using System.Threading.Tasks;
 
 namespace LAB_2.Service
 {
-    public static class StrategyResolver
+    public class StrategyResolver:IStrategyFactory
     {
-        public static IWeapon GetWeapon(WeaponType type) => type switch
+        public IWeapon GetWeapon(WeaponType type) => type switch
         {
             WeaponType.Sword => new Sword(),
             WeaponType.Bow => new Bow(),
             WeaponType.Hammer => new Hammer(),
+            WeaponType.BattleAxe => new BattleAxe(),
+            WeaponType.SwiftDaggers => new SwiftDaggers(),
+            WeaponType.TwinHeadedGreatBow => new TwinHeadedGreatBow(),
+            WeaponType.MoonLightGreatSword => new MoonLightGreatSword(),
+            WeaponType.IronKingHammer => new IronKingHammer(),
             _ => throw new ArgumentOutOfRangeException(nameof(type))
         };
 
-        public static IMovement GetMovement(MovementType type) => type switch
+        public IMovement GetMovement(MovementType type) => type switch
         {
             MovementType.March => new MarchMovement(),
             MovementType.AgileSprint => new AgileMovement(),

@@ -10,7 +10,14 @@ namespace LAB_2.Model.Weapon
     {
         Sword,
         Bow,
-        Hammer
+        Hammer,
+
+        BattleAxe,
+
+        SwiftDaggers,
+        TwinHeadedGreatBow,
+        IronKingHammer,
+        MoonLightGreatSword
 
     }
 }
