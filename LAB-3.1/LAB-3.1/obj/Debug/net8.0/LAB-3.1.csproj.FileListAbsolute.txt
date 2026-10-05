@@ -1,0 +1,16 @@
+D:\PATERNS\LAB-3.1\LAB-3.1\bin\Debug\net8.0\LAB-3.1.exe
+D:\PATERNS\LAB-3.1\LAB-3.1\bin\Debug\net8.0\LAB-3.1.deps.json
+D:\PATERNS\LAB-3.1\LAB-3.1\bin\Debug\net8.0\LAB-3.1.runtimeconfig.json
+D:\PATERNS\LAB-3.1\LAB-3.1\bin\Debug\net8.0\LAB-3.1.dll
+D:\PATERNS\LAB-3.1\LAB-3.1\bin\Debug\net8.0\LAB-3.1.pdb
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\LAB-3.1.GeneratedMSBuildEditorConfig.editorconfig
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\LAB-3.1.AssemblyInfoInputs.cache
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\LAB-3.1.AssemblyInfo.cs
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\LAB-3.1.csproj.CoreCompileInputs.cache
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\LAB-3.1.sourcelink.json
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\LAB-3.1.dll
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\refint\LAB-3.1.dll
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\LAB-3.1.pdb
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\LAB-3.1.genruntimeconfig.cache
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\ref\LAB-3.1.dll
+D:\PATERNS\LAB-3.1\LAB-3.1\obj\Debug\net8.0\LAB-3.1.csproj.Up2Date

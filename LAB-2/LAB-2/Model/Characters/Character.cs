@@ -38,7 +38,7 @@ namespace LAB_2.Model.Characters
             }
         }
 
-        // Баз
+       
         public virtual void TakeDamage(int rawDamage)
         {
             Health -= rawDamage;
