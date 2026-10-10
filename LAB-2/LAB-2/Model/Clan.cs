@@ -10,7 +10,7 @@ namespace LAB_2.Model
     public class Clan
     {
         public string Name { get; }
-        public List<Character> Members { get; } = new();
+        public List<IWarUnit> Units { get; } = new();
 
         public int MapWidth { get; }
         public int MapHeight { get; }
@@ -22,24 +22,84 @@ namespace LAB_2.Model
             MapHeight = mapHeight;
         }
 
+        public List<Character> Members => Units
+            .SelectMany(u => u.GetFlattenedUnits())
+            .OfType<Character>()
+            .ToList();
+
         public void AssembleClan(
             IClanMemberFactory warriorFactory,
             IClanMemberFactory elfFactory,
             IClanMemberFactory dwarfFactory,
-            SquadSpawner spawner)
+            SquadSpawner spawner,
+            IStrategyFactory strategyFactory,
+            (int min, int max) warriorCount,
+            (int min, int max) elfCount,
+            (int min, int max) dwarfCount)
         {
-            Members.Clear();
-            int laneHeight = MapHeight / 3;
+            Units.Clear();
 
-            var warriors = spawner.SpawnSquad(warriorFactory, 3, 6, 0, MapWidth - 1, 0, laneHeight - 1);
-            Members.AddRange(warriors);
+            int thirdW = MapWidth / 3;
 
-            var elves = spawner.SpawnSquad(elfFactory, 3, 6, 0, MapWidth - 1, laneHeight, (laneHeight * 2) - 1);
-            Members.AddRange(elves);
+            int wCenterX = thirdW / 2;
+            int wCenterY = MapHeight / 2;
 
-            var dwarves = spawner.SpawnSquad(dwarfFactory, 3, 6, 0, MapWidth - 1, laneHeight * 2, MapHeight - 1);
-            Members.AddRange(dwarves);
+            int eCenterX = thirdW + (thirdW / 2);
+            int eCenterY = MapHeight / 2;
+
+            int dCenterX = (thirdW * 2) + (thirdW / 2);
+            int dCenterY = MapHeight / 2;
+
+            int radius = Math.Max(2, thirdW / 3);
+            var rawWarrior = (Warrior)warriorFactory.CreateEquippedPrototype();
+            rawWarrior.X = wCenterX; rawWarrior.Y = wCenterY;
+            RaceLeader<Warrior>.Initialize(rawWarrior, strategyFactory);
+            Units.Add(RaceLeader<Warrior>.Instance.Leader);
+
+            var wSpawned = spawner.SpawnSquad(warriorFactory, warriorCount.min, warriorCount.max, wCenterX, wCenterY, radius, MapWidth, MapHeight)
+                                  .Where(w => w != RaceLeader<Warrior>.Instance.Leader).ToList();
+
+            var wBodyguards = new Squad("Охорона Лідера Воїнів");
+            var wAssault = new Squad("Штурмовий загін Воїнів");
+            foreach (var warrior in wSpawned.Take(2)) wBodyguards.AddUnit(warrior);
+            foreach (var warrior in wSpawned.Skip(2)) wAssault.AddUnit(warrior);
+
+            Units.Add(wBodyguards);
+            Units.Add(wAssault);
+            var rawElf = (Elf)elfFactory.CreateEquippedPrototype();
+            rawElf.X = eCenterX; rawElf.Y = eCenterY;
+            RaceLeader<Elf>.Initialize(rawElf, strategyFactory);
+            Units.Add(RaceLeader<Elf>.Instance.Leader);
+
+            var eSpawned = spawner.SpawnSquad(elfFactory, elfCount.min, elfCount.max, eCenterX, eCenterY, radius, MapWidth, MapHeight)
+                                  .Where(e => e != RaceLeader<Elf>.Instance.Leader).ToList();
+
+            var eBodyguards = new Squad("Охорона Лідера Ельфів");
+            var eAssault = new Squad("Штурмовий загін Ельфів");
+
+            foreach (var elf in eSpawned.Take(2)) eBodyguards.AddUnit(elf);
+            foreach (var elf in eSpawned.Skip(2)) eAssault.AddUnit(elf);
+
+            Units.Add(eBodyguards);
+            Units.Add(eAssault);
+            var rawDwarf = (Dwarf)dwarfFactory.CreateEquippedPrototype();
+            rawDwarf.X = dCenterX; rawDwarf.Y = dCenterY;
+            RaceLeader<Dwarf>.Initialize(rawDwarf, strategyFactory);
+            Units.Add(RaceLeader<Dwarf>.Instance.Leader);
+
+            var dSpawned = spawner.SpawnSquad(dwarfFactory, dwarfCount.min, dwarfCount.max, dCenterX, dCenterY, radius, MapWidth, MapHeight)
+                                  .Where(d => d != RaceLeader<Dwarf>.Instance.Leader).ToList();
+
+            var dBodyguards = new Squad("Охорона Лідера Гномів");
+            var dAssault = new Squad("Штурмовий загін Гномів");
+
+            foreach (var dwarf in dSpawned.Take(2)) dBodyguards.AddUnit(dwarf);
+            foreach (var dwarf in dSpawned.Skip(2)) dAssault.AddUnit(dwarf);
+
+            Units.Add(dBodyguards);
+            Units.Add(dAssault);
         }
+
         public void ElectLeaders(IStrategyFactory strategyFactory)
         {
             var warriors = Members.OfType<Warrior>().ToList();
@@ -66,11 +126,12 @@ namespace LAB_2.Model
 
         public void PrintTextReport()
         {
-            Console.WriteLine($"\n=== ТЕКСТОВИЙ СКЛАД КЛАНУ «{Name}» (Всього: {Members.Count}) ===");
+            var members = Members;
+            Console.WriteLine($"\n=== ТЕКСТОВИЙ СКЛАД КЛАНУ «{Name}» (Всього: {members.Count}) ===");
             Console.WriteLine("{0,-25} {1,-10} {2,-12} {3,-18} {4,-15}", "Ім'я", "HP", "Координати", "Зброя (Дальність)", "Тип руху");
             Console.WriteLine(new string('-', 85));
 
-            foreach (var member in Members)
+            foreach (var member in members)
             {
                 Console.WriteLine("{0,-25} {1,-10} ({2,2},{3,2})       {4,-18} {5,-15}",
                     member.Name,

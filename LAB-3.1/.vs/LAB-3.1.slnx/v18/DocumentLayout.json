@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "D:\\PATERNS\\LAB-3.1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|d:\\paterns\\lab-3.1\\lab-3.1\\lightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|solutionrelative:lab-3.1\\lightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|d:\\paterns\\lab-3.1\\lab-3.1\\calculatordecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|solutionrelative:lab-3.1\\calculatordecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|d:\\paterns\\lab-3.1\\lab-3.1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|solutionrelative:lab-3.1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,12 +11,20 @@
       "RelativeMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|solutionrelative:lab-3.1\\validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|d:\\paterns\\lab-3.1\\lab-3.1\\fullcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|solutionrelative:lab-3.1\\fullcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|d:\\paterns\\lab-3.1\\lab-3.1\\calculatordecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|solutionrelative:lab-3.1\\calculatordecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|d:\\paterns\\lab-3.1\\lab-3.1\\icalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|solutionrelative:lab-3.1\\icalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|d:\\paterns\\lab-3.1\\lab-3.1\\lightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|solutionrelative:lab-3.1\\lightcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|d:\\paterns\\lab-3.1\\lab-3.1\\fullcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07567C1-7A18-93FC-CB3C-E74282919434}|LAB-3.1\\LAB-3.1.csproj|solutionrelative:lab-3.1\\fullcalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,79 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CalculatorDecorator.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\CalculatorDecorator.cs",
               "RelativeDocumentMoniker": "LAB-3.1\\CalculatorDecorator.cs",
               "ToolTip": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\CalculatorDecorator.cs",
               "RelativeToolTip": "LAB-3.1\\CalculatorDecorator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-05T12:01:50.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Validator.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\Validator.cs",
               "RelativeDocumentMoniker": "LAB-3.1\\Validator.cs",
               "ToolTip": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\Validator.cs",
               "RelativeToolTip": "LAB-3.1\\Validator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T11:33:17.49Z"
+              "WhenOpened": "2026-10-05T11:33:17.49Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "LightCalculator.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\LightCalculator.cs",
               "RelativeDocumentMoniker": "LAB-3.1\\LightCalculator.cs",
               "ToolTip": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\LightCalculator.cs",
               "RelativeToolTip": "LAB-3.1\\LightCalculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-05T11:25:56.47Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "FullCalculator.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\FullCalculator.cs",
               "RelativeDocumentMoniker": "LAB-3.1\\FullCalculator.cs",
               "ToolTip": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\FullCalculator.cs",
               "RelativeToolTip": "LAB-3.1\\FullCalculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T11:25:13.747Z"
+              "WhenOpened": "2026-10-05T11:25:13.747Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "ICalculator.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\ICalculator.cs",
               "RelativeDocumentMoniker": "LAB-3.1\\ICalculator.cs",
               "ToolTip": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\ICalculator.cs",
               "RelativeToolTip": "LAB-3.1\\ICalculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-05T11:21:31.885Z"
+              "WhenOpened": "2026-10-05T11:21:31.885Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\Program.cs",
               "RelativeDocumentMoniker": "LAB-3.1\\Program.cs",
               "ToolTip": "D:\\PATERNS\\LAB-3.1\\LAB-3.1\\Program.cs",
               "RelativeToolTip": "LAB-3.1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-05T11:19:34.143Z",
               "EditorCaption": ""

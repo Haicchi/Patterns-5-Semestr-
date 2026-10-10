@@ -30,6 +30,7 @@ class Program
                     "/" => calculator.Divide(a, b),
                     _ => throw new InvalidOperationException("Невідома операція.")
                 };
+                result = Math.Round(result, 5);
                 Console.WriteLine($"Результат: {a} {op} {b} = {result}\n");
             }
             catch (DivideByZeroException ex)

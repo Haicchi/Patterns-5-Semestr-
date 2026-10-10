@@ -11,12 +11,13 @@ using System.Threading.Tasks;
 
 namespace LAB_2.Model.Characters
 {
-    public abstract class Character
+    public abstract class Character : IWarUnit
     {
         public string Name { get; set; } = string.Empty;
         public int Health { get; set; }
         public int X { get; set; }
-        public int Y { get; set; }
+        public int Y { get; set; }        
+        public bool IsAlive => Health > 0;
 
         public IWeapon Weapon { get; set; } = null!;
         public IMovement Movement { get; set; } = null!;
@@ -29,7 +30,6 @@ namespace LAB_2.Model.Characters
                 Console.Write($"{Name}");
                 Weapon.Attack(X, Y, target.X, target.Y);
 
-
                 target.TakeDamage(Weapon.Damage);
             }
             else
@@ -38,12 +38,18 @@ namespace LAB_2.Model.Characters
             }
         }
 
-       
         public virtual void TakeDamage(int rawDamage)
         {
             Health -= rawDamage;
             if (Health < 0) Health = 0;
             Console.WriteLine($"   -> {Name} отримує {rawDamage} шкоди! (Залишилось HP: {Health})");
+        }
+        public IEnumerable<IWarUnit> GetFlattenedUnits()
+        {
+            if (IsAlive)
+            {
+                yield return this;
+            }
         }
 
         public virtual Character Clone() => (Character)this.MemberwiseClone();

@@ -77,7 +77,7 @@ namespace LAB_2.Service
             }
         }
 
-     
+
         private void CreateCustomClanDialogue()
         {
             Console.WriteLine("\n--- КОНСТРУКТОР НОВОГО КЛАНУ ---");
@@ -86,18 +86,18 @@ namespace LAB_2.Service
             string name = Console.ReadLine()?.Trim() ?? "";
             if (string.IsNullOrWhiteSpace(name)) name = "Сталевий Легіон";
 
-            int width = ReadInt("Ширина поля бою (за замовчуванням 18): ", 18, 6, 40);
-            int height = ReadInt("Висота поля бою (за замовчуванням 9, кратно 3): ", 9, 3, 24);
+            int width = ReadInt("Ширина поля бою (за замовчуванням 18): ", 18, 6, 100);
+            int height = ReadInt("Висота поля бою (за замовчуванням 9, кратно 3): ", 9, 3, 100);
 
             Console.WriteLine("\nНалаштування кількості бійців у загонах (мін / макс):");
-            var wMin = ReadInt("Мінімум воїнів: ", 2, 1, 15);
-            var wMax = ReadInt("Максимум воїнів: ", 5, wMin, 20);
+            var wMin = ReadInt("Мінімум воїнів: ", 2, 1, 50);
+            var wMax = ReadInt("Максимум воїнів: ", 5, wMin, 50);
 
-            var eMin = ReadInt("Мінімум ельфів: ", 2, 1, 15);
-            var eMax = ReadInt("Максимум ельфів: ", 5, eMin, 20);
+            var eMin = ReadInt("Мінімум ельфів: ", 2, 1, 50);
+            var eMax = ReadInt("Максимум ельфів: ", 5, eMin, 50);
 
-            var dMin = ReadInt("Мінімум гномів: ", 2, 1, 15);
-            var dMax = ReadInt("Максимум гномів: ", 5, dMin, 20);
+            var dMin = ReadInt("Мінімум гномів: ", 2, 1, 50);
+            var dMax = ReadInt("Максимум гномів: ", 5, dMin, 50);
 
             _clan = _initializer.CreateCustomClan(
                 name,
