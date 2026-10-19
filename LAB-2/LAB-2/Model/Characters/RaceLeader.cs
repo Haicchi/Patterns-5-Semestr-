@@ -41,7 +41,7 @@ namespace LAB_2.Service
             switch (Leader)
             {
                 case Warrior:
-                    Leader.Name = $"Лорд-Командувач {Leader.Name}";
+                    Leader.Name = $"Сігвард із Катаріни {Leader.Name}";
                     Leader.Weapon = strategyFactory.GetWeapon(WeaponType.MoonLightGreatSword);
                     break;
 
@@ -51,7 +51,7 @@ namespace LAB_2.Service
                     break;
 
                 case Dwarf:
-                    Leader.Name = $"Тан Підземель {Leader.Name}";
+                    Leader.Name = $"Гігант Йорм {Leader.Name}";
                     Leader.Weapon = strategyFactory.GetWeapon(WeaponType.IronKingHammer);
                     break;
 
@@ -63,7 +63,7 @@ namespace LAB_2.Service
 
         public void DisplayLeaderInfo()
         {
-            Console.WriteLine($"★ [{typeof(T).Name.ToUpper()}] {Leader.Name} | HP: {Leader.Health} | Зброя: {Leader.Weapon.Name} (Дальність: {Leader.Weapon.Range}) | Рух: {Leader.Movement.Desc}");
+            Console.WriteLine($"[{typeof(T).Name.ToUpper()}] {Leader.Name} | HP: {Leader.Health} | Зброя: {Leader.Weapon.Name} (Дальність: {Leader.Weapon.Range}) | Рух: {Leader.Movement.Desc}");
         }
     }
 }

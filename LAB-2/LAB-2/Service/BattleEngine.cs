@@ -20,7 +20,7 @@ namespace LAB_2.Service
         public void StartCivilWar(Clan clan)
         {
             Console.Clear();
-            Console.WriteLine($"⚔️ ПОЧАТОК БИТВИ В СЕРЕДИНІ КЛАНУ «{clan.Name}» ⚔️");
+            Console.WriteLine($"ПОЧАТОК БИТВИ В СЕРЕДИНІ КЛАНУ «{clan.Name}» ⚔️");
             Console.WriteLine("Раси зійшлися в турнірному поєдинку за абсолютну владу!\n");
 
             int round = 1;
@@ -139,7 +139,7 @@ namespace LAB_2.Service
             if (controller.IsReady)
             {
                 controller.TryActivate();
-                Console.WriteLine($"✨ [АУРА] Лідер раси {typeof(T).Name} ({leader.Name}) активував бойову ауру!");
+                Console.WriteLine($"[АУРА] Лідер раси {typeof(T).Name} ({leader.Name}) активував бойову ауру!");
             }
             int auraRadius = 4;
             if (controller.IsActive)
@@ -205,11 +205,11 @@ namespace LAB_2.Service
             Console.WriteLine("\n=======================================================");
             if (winningRace != null)
             {
-                Console.WriteLine($"🏆 ПЕРЕМОГА РАСИ: {winningRace.ToUpper()}! Вціліло бійців: {survivors.Count}");
+                Console.WriteLine($"ПЕРЕМОГА РАСИ: {winningRace.ToUpper()}! Вціліло бійців: {survivors.Count}");
             }
             else
             {
-                Console.WriteLine("💀 Нічия. На полі бою не лишилося живих.");
+                Console.WriteLine("Нічия. На полі бою не лишилося живих.");
             }
             Console.WriteLine("=======================================================");
         }

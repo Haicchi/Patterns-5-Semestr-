@@ -13,7 +13,6 @@ namespace LAB_2.Service
 
         public void Run()
         {
-            // Початковий клан
             _clan = _initializer.CreateClan("Північні Вовки", mapWidth: 18, mapHeight: 9);
 
             while (true)
@@ -107,7 +106,7 @@ namespace LAB_2.Service
                 (eMin, eMax),
                 (dMin, dMax));
 
-            Console.WriteLine($"\n🛡️ Клан «{_clan.Name}» успішно засновано! Загальна чисельність армії: {_clan.Members.Count} бійців.");
+            Console.WriteLine($"\nКлан «{_clan.Name}» успішно засновано! Загальна чисельність армії: {_clan.Members.Count} бійців.");
         }
 
         private static int ReadInt(string prompt, int defaultValue, int min, int max)
