@@ -9,11 +9,14 @@ namespace LAB_2.Interfaces
     public interface IWarUnit
     {
         string Name { get; }
-        int Health { get; set; }
-        int X { get; set; }
-        int Y { get; set; }
+        int Health { get;}
+        int X { get;}
+        int Y { get;}
         bool IsAlive { get; }
+        char MapSymbol { get; }
         void TakeDamage(int damage);
+        IHandler? BuildDamagePipeline();
         IEnumerable<IWarUnit> GetFlattenedUnits();
+        void MoveBy(int deltaX, int deltaY, int mapWidth, int mapHeight, IEnumerable<IWarUnit>? activeUnits = null);
     }
 }

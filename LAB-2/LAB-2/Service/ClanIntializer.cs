@@ -63,8 +63,8 @@ namespace LAB_2.Service
             var wSpawned = _spawner.SpawnSquad(warriorFactory, warriorCount.min, warriorCount.max, wCenterX, wCenterY, radius, mapWidth, mapHeight)
                                    .Where(w => w != RaceLeader<Warrior>.Instance.Leader).ToList();
 
-            var wBodyguards = new Squad("Охорона Лідера Воїнів");
-            var wAssault = new Squad("Штурмовий загін Воїнів");
+            var wBodyguards = new Squad(IBattleLexems.WarriorBodyguardSquad);
+            var wAssault = new Squad(IBattleLexems.WarriorAssaultSquad);
             foreach (var w in wSpawned.Take(2)) wBodyguards.AddUnit(w);
             foreach (var w in wSpawned.Skip(2)) wAssault.AddUnit(w);
             clan.Units.Add(wBodyguards);
@@ -78,8 +78,8 @@ namespace LAB_2.Service
             var eSpawned = _spawner.SpawnSquad(elfFactory, elfCount.min, elfCount.max, eCenterX, eCenterY, radius, mapWidth, mapHeight)
                                    .Where(e => e != RaceLeader<Elf>.Instance.Leader).ToList();
 
-            var eBodyguards = new Squad("Охорона Лідера Ельфів");
-            var eAssault = new Squad("Штурмовий загін Ельфів");
+            var eBodyguards = new Squad(IBattleLexems.ElfBodyguardSquad);
+            var eAssault = new Squad(IBattleLexems.ElfAssaultSquad);
             foreach (var e in eSpawned.Take(2)) eBodyguards.AddUnit(e);
             foreach (var e in eSpawned.Skip(2)) eAssault.AddUnit(e);
             clan.Units.Add(eBodyguards);
@@ -93,8 +93,8 @@ namespace LAB_2.Service
             var dSpawned = _spawner.SpawnSquad(dwarfFactory, dwarfCount.min, dwarfCount.max, dCenterX, dCenterY, radius, mapWidth, mapHeight)
                                    .Where(d => d != RaceLeader<Dwarf>.Instance.Leader).ToList();
 
-            var dBodyguards = new Squad("Охорона Лідера Гномів");
-            var dAssault = new Squad("Штурмовий загін Гномів");
+            var dBodyguards = new Squad(IBattleLexems.DwarfBodyguardSquad);
+            var dAssault = new Squad(IBattleLexems.DwarfAssaultSquad);
             foreach (var d in dSpawned.Take(2)) dBodyguards.AddUnit(d);
             foreach (var d in dSpawned.Skip(2)) dAssault.AddUnit(d);
             clan.Units.Add(dBodyguards);

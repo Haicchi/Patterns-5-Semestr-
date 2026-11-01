@@ -1,34 +1,23 @@
-﻿using LAB_2.Decorators;
-using LAB_2.Model.Characters;
-using System;
-using System.Collections.Generic;
-using System.Xml.Linq;
+﻿using LAB_2.Handlers;
+using LAB_2.Interfaces;
 
-namespace LAB_2.Model.Decorators
+namespace LAB_2.Decorators
 {
     public class ArmorDecorator : CharacterDecorator
     {
         private readonly int _armorValue;
 
-        public ArmorDecorator(Character innerCharacter, int armorValue = 10) : base(innerCharacter)
+        public ArmorDecorator(IWarUnit innerUnit, int armorValue = IBattleConstants.DefaultArmorValue)
+            : base(innerUnit)
         {
             _armorValue = armorValue;
-            Name = $"{innerCharacter.Name} [У латах]";
-            Health += _armorValue;
         }
 
-        public override void TakeDamage(int damage)
-        {
-            int mitigated = Math.Max(1, damage - (_armorValue / 2));
-            _innerCharacter.TakeDamage(mitigated);
-            Health = _innerCharacter.Health;
-        }
+        public override string Name => $"{_innerUnit.Name} {IBattleLexems.ArmorSuffix}";
 
-        protected override Character ApplySpecificDecorator(Character character)
+        protected override IHandler? GetDecoratorHandler()
         {
-            return new ArmorDecorator(character, _armorValue);
+            return new ArmorDamageHandler(_armorValue);
         }
     }
 }
-                    
-            

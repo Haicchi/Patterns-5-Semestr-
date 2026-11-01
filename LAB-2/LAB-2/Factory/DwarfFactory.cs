@@ -19,7 +19,7 @@ namespace LAB_2.Factory
 
         public Character CreateCharacter() => new Dwarf
         {
-            Name = "Гном",
+            Name = IBattleLexems.DwarvesName,
             Health = 140,
             Toughness = 15
         };

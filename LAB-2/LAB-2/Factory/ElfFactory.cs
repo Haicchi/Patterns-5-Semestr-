@@ -22,7 +22,7 @@ namespace LAB_2.Factory
 
         public Character CreateCharacter() => new Elf
         {
-            Name = "Ельф",
+            Name = IBattleLexems.ElvesName,
             Health = 100,
             Dexterity = 15
         };

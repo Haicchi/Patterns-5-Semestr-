@@ -26,7 +26,7 @@ namespace LAB_2.Factory
 
         public Character CreateCharacter() => new Warrior
         {
-            Name = "Воїн",
+            Name = IBattleLexems.WarriorsName,
             Health = 120
         };
 

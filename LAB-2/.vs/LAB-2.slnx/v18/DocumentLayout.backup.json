@@ -3,80 +3,224 @@
   "WorkspaceRootPath": "D:\\PATERNS\\LAB-2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\raceleader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\raceleader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\clan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\clan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\decorators\\healdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\decorators\\healdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\decorators\\rageweapondecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\decorators\\rageweapondecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\decorators\\characterdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\decorators\\characterdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\commands\\moveforwardcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\commands\\moveforwardcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\battleengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\battleengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\clanintializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\clanintializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\ibattleconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\ibattleconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\weapon\\weapontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\weapon\\weapontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\ibattlelexems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\ibattlelexems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\leadertacticsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\leadertacticsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\clanleadercommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\clanleadercommander.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\squad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\squad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\handlers\\unitexecutionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\handlers\\unitexecutionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\iwarunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\iwarunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\handlers\\basecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\handlers\\basecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\handlers\\squadcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\handlers\\squadcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\gamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\gamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\icombathandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\icombathandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\istrategyfarctory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\istrategyfarctory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\handlers\\damagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\handlers\\damagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\squadspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\squadspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\ihandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\ihandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\imovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\imovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\commands\\attackcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\commands\\attackcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\commands\\movebackcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\commands\\movebackcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\enums\\commandtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\enums\\commandtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\lab-2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\lab-2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\handlers\\evasiondamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\handlers\\evasiondamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\dwarf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\dwarf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\decorators\\armordecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\decorators\\armordecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\leaderauracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\leaderauracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\decorators\\healdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\decorators\\healdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\decorators\\ragedecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\decorators\\ragedecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\decorators\\characterdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\decorators\\characterdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\elf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\elf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\squad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\squad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\records\\damagecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\records\\damagecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\handlers\\toughnessdamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\handlers\\toughnessdamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\handlers\\squaddamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\handlers\\squaddamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\handlers\\armordamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\handlers\\armordamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\handlers\\basehealthdamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\handlers\\basehealthdamagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\leadertacticsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\leadertacticsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\clan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\clan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\combatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\combatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\iwarunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\iwarunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\decorators\\rageweapondecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\decorators\\rageweapondecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\movement\\movementtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\movement\\movementtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\movement\\heavymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\movement\\heavymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\factory\\elffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\factory\\elffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\factory\\warriorfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\factory\\warriorfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\strategyresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\strategyresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\squadspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\squadspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\leaderauracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\leaderauracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\gamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\gamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\clanintializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\clanintializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\movement\\marchmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\movement\\marchmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\movement\\agilemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\movement\\agilemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\raceleader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\raceleader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\iweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\iweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\istrategyfarctory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\istrategyfarctory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\iclanmemberfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\iclanmemberfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\factory\\dwarffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\factory\\dwarffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\weapon\\weapontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\weapon\\weapontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\weapon\\sword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,40 +231,8 @@
       "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\weapon\\baseweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\iclanmemberfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\iclanmemberfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\interfaces\\imovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\interfaces\\imovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\factory\\warriorfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\factory\\warriorfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\factory\\dwarffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\factory\\dwarffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\weapon\\bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\weapon\\bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\movement\\heavymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\movement\\heavymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\movement\\agilemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\movement\\agilemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\factory\\elffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\factory\\elffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\dwarf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\dwarf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\weapon\\ironkinghammer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -131,32 +243,8 @@
       "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\weapon\\moonlightgreatsword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\movement\\movementtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\movement\\movementtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\service\\strategyresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\service\\strategyresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\weapon\\battleaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\weapon\\battleaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\warrior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\characters\\elf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\characters\\elf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\movement\\marchmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|solutionrelative:lab-2\\model\\movement\\marchmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4F61874-7BB3-68B2-FA7B-AA01993E054E}|LAB-2\\LAB-2.csproj|d:\\paterns\\lab-2\\lab-2\\model\\weapon\\twinheadedgreatbow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -178,281 +266,167 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CharacterDecorator.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\CharacterDecorator.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Decorators\\CharacterDecorator.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\CharacterDecorator.cs",
-              "RelativeToolTip": "LAB-2\\Decorators\\CharacterDecorator.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T09:08:43.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RageWeaponDecorator.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\RageWeaponDecorator.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Decorators\\RageWeaponDecorator.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\RageWeaponDecorator.cs",
-              "RelativeToolTip": "LAB-2\\Decorators\\RageWeaponDecorator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T10:10:29.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HealDecorator.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\HealDecorator.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Decorators\\HealDecorator.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\HealDecorator.cs",
-              "RelativeToolTip": "LAB-2\\Decorators\\HealDecorator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T13:30:37.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Clan.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Clan.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Clan.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Clan.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Clan.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwFMAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T13:08:11.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RaceLeader.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\RaceLeader.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\RaceLeader.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\RaceLeader.cs*",
-              "RelativeToolTip": "LAB-2\\Model\\Characters\\RaceLeader.cs*",
-              "ViewState": "AgIAABYAAAAAAAAAAAAkwCsAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T11:15:30.682Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "BattleEngine.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\BattleEngine.cs",
               "RelativeDocumentMoniker": "LAB-2\\Service\\BattleEngine.cs",
               "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\BattleEngine.cs",
               "RelativeToolTip": "LAB-2\\Service\\BattleEngine.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-28T13:44:42.975Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClanIntializer.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\ClanIntializer.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Service\\ClanIntializer.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\ClanIntializer.cs",
-              "RelativeToolTip": "LAB-2\\Service\\ClanIntializer.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAuwAMAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "IBattleLexems.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IBattleLexems.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IBattleLexems.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IBattleLexems.cs",
+              "RelativeToolTip": "LAB-2\\Interfaces\\IBattleLexems.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T13:36:48.063Z"
+              "WhenOpened": "2026-10-21T13:39:45.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IBattleConstants.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IBattleConstants.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IBattleConstants.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IBattleConstants.cs",
+              "RelativeToolTip": "LAB-2\\Interfaces\\IBattleConstants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T14:21:44.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MoveForwardCommand.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Commands\\MoveForwardCommand.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Commands\\MoveForwardCommand.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Commands\\MoveForwardCommand.cs*",
+              "RelativeToolTip": "LAB-2\\Commands\\MoveForwardCommand.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T16:05:04.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClanLeaderCommander.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\ClanLeaderCommander.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Service\\ClanLeaderCommander.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\ClanLeaderCommander.cs",
+              "RelativeToolTip": "LAB-2\\Service\\ClanLeaderCommander.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T16:47:20.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UnitExecutionHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\UnitExecutionHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Handlers\\UnitExecutionHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\UnitExecutionHandler.cs",
+              "RelativeToolTip": "LAB-2\\Handlers\\UnitExecutionHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T16:44:46.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseCommandHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\BaseCommandHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Handlers\\BaseCommandHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\BaseCommandHandler.cs",
+              "RelativeToolTip": "LAB-2\\Handlers\\BaseCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T16:38:26.472Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "WeaponType.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\WeaponType.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\WeaponType.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\WeaponType.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Weapon\\WeaponType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
+              "Title": "SquadCommandHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\SquadCommandHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Handlers\\SquadCommandHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\SquadCommandHandler.cs",
+              "RelativeToolTip": "LAB-2\\Handlers\\SquadCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T08:14:03.295Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Squad.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Squad.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Squad.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Squad.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Squad.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T17:21:48.727Z"
+              "WhenOpened": "2026-11-01T16:43:18.059Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "LeaderTacticsManager.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\LeaderTacticsManager.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Service\\LeaderTacticsManager.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\LeaderTacticsManager.cs",
-              "RelativeToolTip": "LAB-2\\Service\\LeaderTacticsManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAnAAAAAAAAAA==",
+              "Title": "ICombatHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\ICombatHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\ICombatHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\ICombatHandler.cs",
+              "RelativeToolTip": "LAB-2\\Interfaces\\ICombatHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T17:29:44.937Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IWarUnit.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IWarUnit.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IWarUnit.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IWarUnit.cs",
-              "RelativeToolTip": "LAB-2\\Interfaces\\IWarUnit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T17:18:41.364Z"
+              "WhenOpened": "2026-11-01T16:37:59.248Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "GameMenu.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\GameMenu.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Service\\GameMenu.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\GameMenu.cs",
-              "RelativeToolTip": "LAB-2\\Service\\GameMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAAAAAAAAAAAA==",
+              "Title": "AttackCommand.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Commands\\AttackCommand.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Commands\\AttackCommand.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Commands\\AttackCommand.cs",
+              "RelativeToolTip": "LAB-2\\Commands\\AttackCommand.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAkwCgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T13:46:42.969Z"
+              "WhenOpened": "2026-11-01T16:06:48.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "SquadSpawner.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\SquadSpawner.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Service\\SquadSpawner.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\SquadSpawner.cs",
-              "RelativeToolTip": "LAB-2\\Service\\SquadSpawner.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAowB8AAAAQAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "DamageHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\DamageHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Handlers\\DamageHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\DamageHandler.cs",
+              "RelativeToolTip": "LAB-2\\Handlers\\DamageHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T13:06:46.365Z"
+              "WhenOpened": "2026-10-25T15:34:32.516Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "IStrategyFarctory.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IStrategyFarctory.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IStrategyFarctory.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IStrategyFarctory.cs",
-              "RelativeToolTip": "LAB-2\\Interfaces\\IStrategyFarctory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "MoveBackCommand.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Commands\\MoveBackCommand.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Commands\\MoveBackCommand.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Commands\\MoveBackCommand.cs",
+              "RelativeToolTip": "LAB-2\\Commands\\MoveBackCommand.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T11:37:17.958Z"
+              "WhenOpened": "2026-11-01T16:06:10.682Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Character.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Character.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\Character.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Character.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Characters\\Character.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAcwC0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T08:20:50.085Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ArmorDecorator.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\ArmorDecorator.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Decorators\\ArmorDecorator.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\ArmorDecorator.cs",
-              "RelativeToolTip": "LAB-2\\Decorators\\ArmorDecorator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T10:00:35.202Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "LeaderAuraController.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\LeaderAuraController.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Service\\LeaderAuraController.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\LeaderAuraController.cs",
-              "RelativeToolTip": "LAB-2\\Service\\LeaderAuraController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAADwvx4AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T13:37:02.568Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RageDecorator.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\RageDecorator.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Decorators\\RageDecorator.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\RageDecorator.cs",
-              "RelativeToolTip": "LAB-2\\Decorators\\RageDecorator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-10T10:04:21.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Sword.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\Sword.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\Sword.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\Sword.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Weapon\\Sword.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T07:18:55.787Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IWeapon.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IWeapon.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IWeapon.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IWeapon.cs",
-              "RelativeToolTip": "LAB-2\\Interfaces\\IWeapon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T07:15:26.268Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BaseWeapon.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\BaseWeapon.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\BaseWeapon.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\BaseWeapon.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Weapon\\BaseWeapon.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T07:16:39.816Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "IClanMemberFactory.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IClanMemberFactory.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IClanMemberFactory.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IClanMemberFactory.cs",
-              "RelativeToolTip": "LAB-2\\Interfaces\\IClanMemberFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T11:50:23.551Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
               "Title": "IMovement.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IMovement.cs",
               "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IMovement.cs",
@@ -460,47 +434,318 @@
               "RelativeToolTip": "LAB-2\\Interfaces\\IMovement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T07:43:22.271Z"
+              "WhenOpened": "2026-09-22T07:43:22.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IHandler.cs",
+              "RelativeToolTip": "LAB-2\\Interfaces\\IHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T15:33:06.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ICommand.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\ICommand.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\ICommand.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\ICommand.cs",
+              "RelativeToolTip": "LAB-2\\Interfaces\\ICommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T15:26:08.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CommandType.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Enums\\CommandType.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Enums\\CommandType.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Enums\\CommandType.cs",
+              "RelativeToolTip": "LAB-2\\Enums\\CommandType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-01T15:06:30.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Dwarf.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Dwarf.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\Dwarf.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Dwarf.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Characters\\Dwarf.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T08:46:09.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EvasionDamageHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\EvasionDamageHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Handlers\\EvasionDamageHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\EvasionDamageHandler.cs",
+              "RelativeToolTip": "LAB-2\\Handlers\\EvasionDamageHandler.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwAgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T15:50:18.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ArmorDecorator.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\ArmorDecorator.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Decorators\\ArmorDecorator.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\ArmorDecorator.cs",
+              "RelativeToolTip": "LAB-2\\Decorators\\ArmorDecorator.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-10T10:00:35.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LAB-2.csproj",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\LAB-2.csproj",
+              "RelativeDocumentMoniker": "LAB-2\\LAB-2.csproj",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\LAB-2.csproj",
+              "RelativeToolTip": "LAB-2\\LAB-2.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-25T15:34:06.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "HealDecorator.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\HealDecorator.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Decorators\\HealDecorator.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\HealDecorator.cs",
+              "RelativeToolTip": "LAB-2\\Decorators\\HealDecorator.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwB8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-10T13:30:37.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RageDecorator.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\RageDecorator.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Decorators\\RageDecorator.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\RageDecorator.cs",
+              "RelativeToolTip": "LAB-2\\Decorators\\RageDecorator.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBwAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-10T10:04:21.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CharacterDecorator.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\CharacterDecorator.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Decorators\\CharacterDecorator.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\CharacterDecorator.cs",
+              "RelativeToolTip": "LAB-2\\Decorators\\CharacterDecorator.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwD8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-10T09:08:43.385Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "WarriorFactory.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\WarriorFactory.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Factory\\WarriorFactory.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\WarriorFactory.cs",
-              "RelativeToolTip": "LAB-2\\Factory\\WarriorFactory.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwAEAAAAdAAAAAAAAAA==",
+              "Title": "Elf.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Elf.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\Elf.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Elf.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Characters\\Elf.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T11:57:22.625Z"
+              "WhenOpened": "2026-09-22T08:45:44.564Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "DwarfFactory.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\DwarfFactory.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Factory\\DwarfFactory.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\DwarfFactory.cs",
-              "RelativeToolTip": "LAB-2\\Factory\\DwarfFactory.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Title": "Character.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Character.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\Character.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Character.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Characters\\Character.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T11:59:01.704Z"
+              "WhenOpened": "2026-09-22T08:20:50.085Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "Bow.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\Bow.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\Bow.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\Bow.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Weapon\\Bow.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "Squad.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Squad.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Squad.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Squad.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Squad.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAYwCkAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T07:19:02.091Z"
+              "WhenOpened": "2026-10-10T17:21:48.727Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 26,
+              "Title": "DamageContext.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Records\\DamageContext.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Records\\DamageContext.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Records\\DamageContext.cs",
+              "RelativeToolTip": "LAB-2\\Records\\DamageContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T15:35:30.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ToughnessDamageHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\ToughnessDamageHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Handlers\\ToughnessDamageHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\ToughnessDamageHandler.cs",
+              "RelativeToolTip": "LAB-2\\Handlers\\ToughnessDamageHandler.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBMAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T15:54:47.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SquadDamageHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\SquadDamageHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Handlers\\SquadDamageHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\SquadDamageHandler.cs",
+              "RelativeToolTip": "LAB-2\\Handlers\\SquadDamageHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T16:03:25.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ArmorDamageHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\ArmorDamageHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Handlers\\ArmorDamageHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\ArmorDamageHandler.cs",
+              "RelativeToolTip": "LAB-2\\Handlers\\ArmorDamageHandler.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T15:48:42.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "BaseHealthDamageHandler.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\BaseHealthDamageHandler.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Handlers\\BaseHealthDamageHandler.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Handlers\\BaseHealthDamageHandler.cs",
+              "RelativeToolTip": "LAB-2\\Handlers\\BaseHealthDamageHandler.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T15:46:22.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "LeaderTacticsManager.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\LeaderTacticsManager.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Service\\LeaderTacticsManager.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\LeaderTacticsManager.cs",
+              "RelativeToolTip": "LAB-2\\Service\\LeaderTacticsManager.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAADwvy4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-10T17:29:44.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Clan.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Clan.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Clan.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Clan.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Clan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T13:08:11.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "CombatService.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\CombatService.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Service\\CombatService.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\CombatService.cs",
+              "RelativeToolTip": "LAB-2\\Service\\CombatService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-25T16:23:07.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IWarUnit.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IWarUnit.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IWarUnit.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IWarUnit.cs",
+              "RelativeToolTip": "LAB-2\\Interfaces\\IWarUnit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-10T17:18:41.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RageWeaponDecorator.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\RageWeaponDecorator.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Decorators\\RageWeaponDecorator.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Decorators\\RageWeaponDecorator.cs",
+              "RelativeToolTip": "LAB-2\\Decorators\\RageWeaponDecorator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-10T10:10:29.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Warrior.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Warrior.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\Warrior.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Warrior.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Characters\\Warrior.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T08:45:13.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
               "Title": "HeavyMovement.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Movement\\HeavyMovement.cs",
               "RelativeDocumentMoniker": "LAB-2\\Model\\Movement\\HeavyMovement.cs",
@@ -512,67 +757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "AgileMovement.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Movement\\AgileMovement.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Movement\\AgileMovement.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Movement\\AgileMovement.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Movement\\AgileMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T07:56:51.705Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "ElfFactory.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\ElfFactory.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Factory\\ElfFactory.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\ElfFactory.cs",
-              "RelativeToolTip": "LAB-2\\Factory\\ElfFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T12:27:18.205Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Dwarf.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Dwarf.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\Dwarf.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Dwarf.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Characters\\Dwarf.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T08:46:09.239Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "IronKingHammer.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\IronKingHammer.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\IronKingHammer.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\IronKingHammer.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Weapon\\IronKingHammer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T12:20:19.955Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "MoonLightGreatSword.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\MoonLightGreatSword.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\MoonLightGreatSword.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\MoonLightGreatSword.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Weapon\\MoonLightGreatSword.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T12:19:15.689Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 37,
               "Title": "MovementType.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Movement\\MovementType.cs",
               "RelativeDocumentMoniker": "LAB-2\\Model\\Movement\\MovementType.cs",
@@ -584,67 +769,103 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "StrategyResolver.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\StrategyResolver.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Service\\StrategyResolver.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\StrategyResolver.cs",
-              "RelativeToolTip": "LAB-2\\Service\\StrategyResolver.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 39,
+              "Title": "ElfFactory.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\ElfFactory.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Factory\\ElfFactory.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\ElfFactory.cs",
+              "RelativeToolTip": "LAB-2\\Factory\\ElfFactory.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T08:15:19.052Z"
+              "WhenOpened": "2026-09-28T12:27:18.205Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 40,
+              "Title": "WarriorFactory.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\WarriorFactory.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Factory\\WarriorFactory.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\WarriorFactory.cs",
+              "RelativeToolTip": "LAB-2\\Factory\\WarriorFactory.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T11:57:22.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Program.cs",
               "RelativeDocumentMoniker": "LAB-2\\Program.cs",
               "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Program.cs",
               "RelativeToolTip": "LAB-2\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwAwAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-22T06:50:40.951Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "BattleAxe.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\BattleAxe.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\BattleAxe.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\BattleAxe.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Weapon\\BattleAxe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 42,
+              "Title": "StrategyResolver.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\StrategyResolver.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Service\\StrategyResolver.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\StrategyResolver.cs",
+              "RelativeToolTip": "LAB-2\\Service\\StrategyResolver.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T12:17:49.801Z"
+              "WhenOpened": "2026-09-22T08:15:19.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Warrior.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Warrior.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\Warrior.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Warrior.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Characters\\Warrior.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 43,
+              "Title": "SquadSpawner.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\SquadSpawner.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Service\\SquadSpawner.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\SquadSpawner.cs",
+              "RelativeToolTip": "LAB-2\\Service\\SquadSpawner.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T08:45:13.89Z"
+              "WhenOpened": "2026-09-28T13:06:46.365Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Elf.cs",
-              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Elf.cs",
-              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\Elf.cs",
-              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\Elf.cs",
-              "RelativeToolTip": "LAB-2\\Model\\Characters\\Elf.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 44,
+              "Title": "LeaderAuraController.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\LeaderAuraController.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Service\\LeaderAuraController.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\LeaderAuraController.cs",
+              "RelativeToolTip": "LAB-2\\Service\\LeaderAuraController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA5wA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-22T08:45:44.564Z"
+              "WhenOpened": "2026-10-10T13:37:02.568Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
+              "Title": "GameMenu.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\GameMenu.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Service\\GameMenu.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\GameMenu.cs",
+              "RelativeToolTip": "LAB-2\\Service\\GameMenu.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAwwGwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T13:46:42.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "ClanIntializer.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\ClanIntializer.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Service\\ClanIntializer.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Service\\ClanIntializer.cs",
+              "RelativeToolTip": "LAB-2\\Service\\ClanIntializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T13:36:48.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
               "Title": "MarchMovement.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Movement\\MarchMovement.cs",
               "RelativeDocumentMoniker": "LAB-2\\Model\\Movement\\MarchMovement.cs",
@@ -656,7 +877,163 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 48,
+              "Title": "AgileMovement.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Movement\\AgileMovement.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Movement\\AgileMovement.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Movement\\AgileMovement.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Movement\\AgileMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T07:56:51.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "RaceLeader.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\RaceLeader.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Characters\\RaceLeader.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Characters\\RaceLeader.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Characters\\RaceLeader.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAA9wEEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T11:15:30.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "IWeapon.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IWeapon.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IWeapon.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IWeapon.cs",
+              "RelativeToolTip": "LAB-2\\Interfaces\\IWeapon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T07:15:26.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "IStrategyFarctory.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IStrategyFarctory.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IStrategyFarctory.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IStrategyFarctory.cs",
+              "RelativeToolTip": "LAB-2\\Interfaces\\IStrategyFarctory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T11:37:17.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IClanMemberFactory.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IClanMemberFactory.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Interfaces\\IClanMemberFactory.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Interfaces\\IClanMemberFactory.cs",
+              "RelativeToolTip": "LAB-2\\Interfaces\\IClanMemberFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T11:50:23.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "DwarfFactory.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\DwarfFactory.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Factory\\DwarfFactory.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Factory\\DwarfFactory.cs",
+              "RelativeToolTip": "LAB-2\\Factory\\DwarfFactory.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T11:59:01.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "WeaponType.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\WeaponType.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\WeaponType.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\WeaponType.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Weapon\\WeaponType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T08:14:03.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Sword.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\Sword.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\Sword.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\Sword.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Weapon\\Sword.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T07:18:55.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "BaseWeapon.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\BaseWeapon.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\BaseWeapon.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\BaseWeapon.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Weapon\\BaseWeapon.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T07:16:39.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Bow.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\Bow.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\Bow.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\Bow.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Weapon\\Bow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T07:19:02.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "IronKingHammer.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\IronKingHammer.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\IronKingHammer.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\IronKingHammer.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Weapon\\IronKingHammer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T12:20:19.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "MoonLightGreatSword.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\MoonLightGreatSword.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\MoonLightGreatSword.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\MoonLightGreatSword.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Weapon\\MoonLightGreatSword.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T12:19:15.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "BattleAxe.cs",
+              "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\BattleAxe.cs",
+              "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\BattleAxe.cs",
+              "ToolTip": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\BattleAxe.cs",
+              "RelativeToolTip": "LAB-2\\Model\\Weapon\\BattleAxe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T12:17:49.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
               "Title": "TwinHeadedGreatBow.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\TwinHeadedGreatBow.cs",
               "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\TwinHeadedGreatBow.cs",
@@ -668,7 +1045,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 62,
               "Title": "SwiftDaggers.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\SwiftDaggers.cs",
               "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\SwiftDaggers.cs",
@@ -680,7 +1057,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 63,
               "Title": "Hammer.cs",
               "DocumentMoniker": "D:\\PATERNS\\LAB-2\\LAB-2\\Model\\Weapon\\Hammer.cs",
               "RelativeDocumentMoniker": "LAB-2\\Model\\Weapon\\Hammer.cs",

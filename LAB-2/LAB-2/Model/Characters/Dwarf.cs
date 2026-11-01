@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LAB_2.Handlers;
+using LAB_2.Interfaces;
 
 namespace LAB_2.Model.Characters
 {
@@ -13,16 +9,14 @@ namespace LAB_2.Model.Characters
 
         public override char MapSymbol => 'D';
 
-        public override void TakeDamage(int rawDamage)
+        public override IHandler BuildDamagePipeline()
         {
-         
-            double reductionMultiplier = 1.0 - (Toughness / 100.0);
-            int reducedDamage = (int)Math.Round(rawDamage * reductionMultiplier);
+            double reductionRatio = Toughness / 100.0;
 
-            Health -= reducedDamage;
-            if (Health < 0) Health = 0;
-
-            Console.WriteLine($"   -> {Name} завдяки стійкості (Toughness: {Toughness}%) блокує частину удару й отримує {reducedDamage} шкоди замість {rawDamage}! (Залишилось HP: {Health})");
+            IHandler toughnessHandler = new ToughnessDamageHandler(reductionRatio);
+            IHandler healthHandler = new BaseHealthDamageHandler();
+            toughnessHandler.SetNext(healthHandler);
+            return toughnessHandler;
         }
 
         public override Character Clone() => (Dwarf)base.Clone();

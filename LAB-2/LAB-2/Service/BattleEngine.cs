@@ -1,7 +1,10 @@
-﻿using LAB_2.Decorators;
+﻿using LAB_2.Commands;
+using LAB_2.Decorators;
+using LAB_2.Enums;
+using LAB_2.Interfaces;
+using LAB_2.Mediator;
 using LAB_2.Model;
 using LAB_2.Model.Characters;
-using LAB_2.Model.Decorators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,234 +14,79 @@ namespace LAB_2.Service
 {
     public class BattleEngine
     {
-        private readonly LeaderAuraController _warriorAura = new LeaderAuraController(duration: 3, cooldown: 5);
-        private readonly LeaderAuraController _dwarfAura = new LeaderAuraController(duration: 2, cooldown: 4);
-        private readonly LeaderAuraController _elfAura = new LeaderAuraController(duration: 2, cooldown: 3);
-
-        private readonly LeaderTacticsManager _tacticsManager = new LeaderTacticsManager();
+        private readonly ClanLeaderCommander _commander = new();
 
         public void StartCivilWar(Clan clan)
         {
             Console.Clear();
-            Console.WriteLine($"ПОЧАТОК БИТВИ В СЕРЕДИНІ КЛАНУ «{clan.Name}» ⚔️");
-            Console.WriteLine("Раси зійшлися в турнірному поєдинку за абсолютну владу!\n");
+            Console.WriteLine($"ПОЧАТОК БИТВИ В СЕРЕДИНІ КЛАНУ «{clan.Name}» ⚔️\nРаси зійшлися в турнірному поєдинку за абсолютну владу!\n");
 
-            int round = 1;
-            while (GetAliveRacesCount(clan.Members) > 1 && round <= 30)
+            IBattleMediator mediator = new BattleMediator(clan);
+            CombatService combatService = new(mediator);
+
+            for (int round = 1; GetAliveRacesCount(clan.Units) > 1 && round <= 30; round++)
             {
                 Console.WriteLine($"\n--- РАУНД {round} ---");
-                UpdateBodyguardTactics(clan);
-                ProcessAuras(clan.Members);
+                mediator.Notify(this, BattleEvent.RoundStarted);
 
-                var activeFighters = clan.Members.Where(m => m.Health > 0).ToList();
-
-                foreach (var attacker in activeFighters)
+                foreach (var attacker in clan.Units.SelectMany(u => u.GetFlattenedUnits()).Where(m => m.IsAlive).ToList())
                 {
-                    if (attacker.Health <= 0) continue;
+                    if (!attacker.IsAlive) continue;
 
-                    Type attackerBaseType = GetBaseRaceType(attacker);
-                    var target = clan.Members
-                        .Where(m => m.Health > 0 && GetBaseRaceType(m) != attackerBaseType)
-                        .OrderBy(m => CalculateDistance(attacker.X, attacker.Y, m.X, m.Y))
-                        .FirstOrDefault();
+                    var type = GetRaceType(attacker);
+                    var target = clan.Units.SelectMany(u => u.GetFlattenedUnits())
+                        .Where(m => m.IsAlive && GetRaceType(m) != type)
+                        .MinBy(m => Dist(attacker.X, attacker.Y, m.X, m.Y));
 
                     if (target == null) break;
 
-                    int distance = CalculateDistance(attacker.X, attacker.Y, target.X, target.Y);
+                    var baseChar = Unwrap(attacker);
+                    var leader = GetLeader(type);
+                    int dist = Dist(attacker.X, attacker.Y, target.X, target.Y);
 
-                    if (distance <= attacker.Weapon.Range)
-                    {
-                        Console.WriteLine($"💥 [{attacker.MapSymbol}] {attacker.Name} атакує [{target.MapSymbol}] {target.Name} зброєю {attacker.Weapon.Name} (Дистанція: {distance}):");
-                        target.TakeDamage(attacker.Weapon.Damage);
+                    ICommand cmd = (baseChar?.Health < IBattleConstants.MaxAllowedHealth / 2 && leader is { IsAlive: true } && leader != attacker)
+                        ? new MoveBackCommand(leader, clan.Units)
+                        : dist <= (baseChar?.Weapon?.Range ?? 1)
+                            ? new AttackCommand(target, combatService)
+                            : new MoveForwardCommand(target, clan.Units);
 
-                        if (target.Health <= 0)
-                        {
-                            Console.WriteLine($"   💀 {target.Name} поляг у бою!");
-                        }
-                    }
-                    else
-                    {
-                        MoveTowards(attacker, target, clan.MapWidth, clan.MapHeight);
-                        Console.WriteLine($"🏃 [{attacker.MapSymbol}] {attacker.Name} рухається ({attacker.Movement.Desc}) -> нова позиція ({attacker.X},{attacker.Y})");
-                    }
-
+                    _commander.IssueCommand(cmd, attacker, clan.MapWidth, clan.MapHeight);
                     Thread.Sleep(120);
                 }
 
                 clan.DrawBattlefieldMap();
-                CheckLeaderMorale(clan.Members);
-
-                round++;
                 Console.WriteLine("\nНатисніть будь-яку клавішу для наступного раунду (або зачекайте)...");
                 Thread.Sleep(600);
             }
 
-            AnnounceWinner(clan.Members);
+            AnnounceWinner(clan.Units);
         }
 
-        private void UpdateBodyguardTactics(Clan clan)
+        private static Type GetRaceType(IWarUnit u) => Unwrap(u)?.GetType() ?? u.GetType();
+
+        private static Character? Unwrap(IWarUnit u)
         {
-            if (RaceLeader<Warrior>.IsElected)
-            {
-                var leader = RaceLeader<Warrior>.Instance.Leader;
-                var bodyguardSquad = clan.Units.OfType<Squad>().FirstOrDefault(s => s.Name.Contains("Охорона Лідера Воїнів"));
-                if (bodyguardSquad != null)
-                {
-                    _tacticsManager.SyncBodyguardsWithLeader(leader, bodyguardSquad, clan.MapWidth, clan.MapHeight);
-                }
-            }
-
-            if (RaceLeader<Elf>.IsElected)
-            {
-                var leader = RaceLeader<Elf>.Instance.Leader;
-                var bodyguardSquad = clan.Units.OfType<Squad>().FirstOrDefault(s => s.Name.Contains("Охорона Лідера Ельфів"));
-                if (bodyguardSquad != null)
-                {
-                    _tacticsManager.SyncBodyguardsWithLeader(leader, bodyguardSquad, clan.MapWidth, clan.MapHeight);
-                }
-            }
-
-            if (RaceLeader<Dwarf>.IsElected)
-            {
-                var leader = RaceLeader<Dwarf>.Instance.Leader;
-                var bodyguardSquad = clan.Units.OfType<Squad>().FirstOrDefault(s => s.Name.Contains("Охорона Лідера Гномів"));
-                if (bodyguardSquad != null)
-                {
-                    _tacticsManager.SyncBodyguardsWithLeader(leader, bodyguardSquad, clan.MapWidth, clan.MapHeight);
-                }
-            }
+            while (u is CharacterDecorator d) u = d.InnerUnit;
+            return u as Character;
         }
 
-        private void ProcessAuras(List<Character> members)
+        private static Character? GetLeader(Type t) =>
+            t == typeof(Warrior) && RaceLeader<Warrior>.IsElected ? RaceLeader<Warrior>.Instance.Leader :
+            t == typeof(Elf) && RaceLeader<Elf>.IsElected ? RaceLeader<Elf>.Instance.Leader :
+            t == typeof(Dwarf) && RaceLeader<Dwarf>.IsElected ? RaceLeader<Dwarf>.Instance.Leader : null;
+
+        private static int Dist(int x1, int y1, int x2, int y2) => Math.Max(Math.Abs(x1 - x2), Math.Abs(y1 - y2));
+
+        private static int GetAliveRacesCount(List<IWarUnit> units) =>
+            units.SelectMany(u => u.GetFlattenedUnits()).Where(m => m.IsAlive).Select(GetRaceType).Distinct().Count();
+
+        private static void AnnounceWinner(List<IWarUnit> units)
         {
-            _warriorAura.ProcessTurn();
-            _dwarfAura.ProcessTurn();
-            _elfAura.ProcessTurn();
-
-            ProcessRaceAura<Warrior>(members, _warriorAura, (c) => new RageDecorator(c, bonusDamage: 10));
-            ProcessRaceAura<Dwarf>(members, _dwarfAura, (c) => new ArmorDecorator(c, armorValue: 20));
-            ProcessRaceAura<Elf>(members, _elfAura, (c) => new HealDecorator(c, healAmount: 15));
-            if (_elfAura.IsActive)
-            {
-                foreach (var member in members)
-                {
-                    if (member is HealDecorator healer)
-                    {
-                        healer.ApplyHealTick();
-                    }
-                }
-            }
-        }
-
-        private void ProcessRaceAura<T>(List<Character> members, LeaderAuraController controller, Func<Character, Character> decoratorFactory) where T : Character
-        {
-            if (!RaceLeader<T>.IsElected) return;
-
-            var leader = RaceLeader<T>.Instance.Leader;
-            if (leader.Health <= 0) return;
-            if (controller.IsReady)
-            {
-                controller.TryActivate();
-                Console.WriteLine($"[АУРА] Лідер раси {typeof(T).Name} ({leader.Name}) активував бойову ауру!");
-            }
-            int auraRadius = 4;
-            if (controller.IsActive)
-            {
-                for (int i = 0; i < members.Count; i++)
-                {
-                    var member = members[i];
-                    if (GetBaseRaceType(member) == typeof(T) && member.Health > 0 && !(member is CharacterDecorator))
-                    {
-                        int dist = CalculateDistance(member.X, member.Y, leader.X, leader.Y);
-                        if (dist <= auraRadius)
-                        {
-                            members[i] = decoratorFactory(member);
-                            Console.WriteLine($"  🟢 {members[i].Name} потрапив під дію аури!");
-                        }
-                    }
-                }
-            }
-            else
-            {
-                for (int i = 0; i < members.Count; i++)
-                {
-                    var member = members[i];
-                    if (GetBaseRaceType(member) == typeof(T) && member is CharacterDecorator decorator)
-                    {
-                        members[i] = decorator.InnerCharacter;
-                        Console.WriteLine($"  ⚪ Дія аури закінчилася для {members[i].Name}. Баф знято!");
-                    }
-                }
-            }
-        }
-
-        private static Type GetBaseRaceType(Character character)
-        {
-            Character current = character;
-            while (current is CharacterDecorator decorator)
-            {
-                current = decorator.InnerCharacter;
-            }
-            return current.GetType();
-        }
-
-        private static int CalculateDistance(int x1, int y1, int x2, int y2) =>
-            Math.Max(Math.Abs(x1 - x2), Math.Abs(y1 - y2));
-
-        private static void MoveTowards(Character mover, Character target, int mapWidth, int mapHeight)
-        {
-            int dx = Math.Sign(target.X - mover.X);
-            int dy = Math.Sign(target.Y - mover.Y);
-
-            mover.X = Math.Clamp(mover.X + dx * mover.Movement.MoveDistance, 0, mapWidth - 1);
-            mover.Y = Math.Clamp(mover.Y + dy * mover.Movement.MoveDistance, 0, mapHeight - 1);
-        }
-
-        private static int GetAliveRacesCount(List<Character> members) =>
-            members.Where(m => m.Health > 0).Select(m => GetBaseRaceType(m)).Distinct().Count();
-
-        private static void AnnounceWinner(List<Character> members)
-        {
-            var survivors = members.Where(m => m.Health > 0).ToList();
-            var winningRace = survivors.FirstOrDefault() != null ? GetBaseRaceType(survivors.First()).Name : null;
-
-            Console.WriteLine("\n=======================================================");
-            if (winningRace != null)
-            {
-                Console.WriteLine($"ПЕРЕМОГА РАСИ: {winningRace.ToUpper()}! Вціліло бійців: {survivors.Count}");
-            }
-            else
-            {
-                Console.WriteLine("Нічия. На полі бою не лишилося живих.");
-            }
-            Console.WriteLine("=======================================================");
-        }
-
-        private static void CheckLeaderMorale(List<Character> members)
-        {
-            CheckRaceMorale<Warrior>(members, "Воїни");
-            CheckRaceMorale<Elf>(members, "Ельфи");
-            CheckRaceMorale<Dwarf>(members, "Гноми");
-        }
-
-        private static void CheckRaceMorale<T>(List<Character> members, string raceName) where T : Character
-        {
-            if (RaceLeader<T>.IsElected)
-            {
-                var leader = RaceLeader<T>.Instance.Leader;
-                if (leader.Health <= 0)
-                {
-                    var survivorsOfRace = members.Where(m => GetBaseRaceType(m) == typeof(T) && m.Health > 0).ToList();
-                    if (survivorsOfRace.Count > 0)
-                    {
-                        Console.WriteLine($"\n🏳️ Лідер раси [{raceName}] ({leader.Name}) поліг у бою! Загін охоплений панікою і здається в полон!");
-                        foreach (var soldier in survivorsOfRace)
-                        {
-                            soldier.Health = 0;
-                        }
-                    }
-                }
-            }
+            var survivors = units.SelectMany(u => u.GetFlattenedUnits()).Select(Unwrap).Where(m => m is { IsAlive: true }).Distinct().ToList();
+            string? winner = survivors.FirstOrDefault() is { } s ? GetRaceType(s).Name.ToUpper() : null;
+            Console.WriteLine($"\n=======================================================\n" +
+                (winner != null ? $"ПЕРЕМОГА РАСИ: {winner}! Вціліло бійців: {survivors.Count}" : "Нічия. На полі бою не лишилося живих.") +
+                "\n=======================================================");
         }
     }
 }

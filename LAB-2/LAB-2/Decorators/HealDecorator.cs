@@ -1,34 +1,46 @@
-﻿using LAB_2.Model.Characters;
-using LAB_2.Model.Decorators;
+﻿using LAB_2.Interfaces;
+using LAB_2.Model.Characters;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LAB_2.Decorators
 {
-    public class HealDecorator:CharacterDecorator
+    public class HealDecorator : CharacterDecorator
     {
-        private readonly int _healAmount;
-        private const int MaxAllowedHealth = 150;
+        private int _healAmount;
 
-        public HealDecorator(Character innerCharacter, int healAmount = 15) : base(innerCharacter)
+        public HealDecorator(IWarUnit innerUnit, int healAmount = IBattleConstants.DefaultHealAmount)
+            : base(innerUnit)
         {
             _healAmount = healAmount;
             ApplyHealTick();
         }
+
+        public override string Name => $"{_innerUnit.Name} {IBattleLexems.HealSuffix}";
+
         public void ApplyHealTick()
         {
-            if (Health <= 0) return;
+            if (_innerUnit.Health <= 0) return;
 
-            int newHealth = _innerCharacter.Health + _healAmount;
-            _innerCharacter.Health = Math.Min(newHealth, MaxAllowedHealth);
-            Health = _innerCharacter.Health; 
+            var baseCharacter = UnwrapToBaseCharacter(_innerUnit);
+            if (baseCharacter != null)
+            {
+                baseCharacter.Health = Math.Min(baseCharacter.Health + _healAmount, IBattleConstants.MaxAllowedHealth);
+                Console.WriteLine($"[{Name}] відновлює {_healAmount} HP! (Поточне HP: {Health})");
+            }
         }
-        protected override Character ApplySpecificDecorator(Character character)
+
+        protected override IHandler? GetDecoratorHandler()
         {
-            return new HealDecorator(character, _healAmount);
+            return null;
+        }
+
+        private static Character? UnwrapToBaseCharacter(IWarUnit unit)
+        {
+            while (unit is CharacterDecorator decorator)
+            {
+                unit = decorator.InnerUnit;
+            }
+            return unit as Character;
         }
     }
 }

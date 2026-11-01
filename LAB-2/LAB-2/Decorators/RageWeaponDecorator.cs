@@ -13,7 +13,7 @@ namespace LAB_2.Decorators
             _bonusDamage = bonusDamage;
         }
 
-        public string Name => $"{_innerWeapon.Name} (Лють)";
+        public string Name => $"{_innerWeapon.Name} {IBattleLexems.RageSuffix}";
         public int Damage => _innerWeapon.Damage + _bonusDamage;
         public int Range => _innerWeapon.Range;
 

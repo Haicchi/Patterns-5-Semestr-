@@ -1,42 +1,68 @@
 ﻿using LAB_2.Interfaces;
-using LAB_2.Model.Characters;
-using System;
+using LAB_2.Records;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LAB_2.Decorators
 {
-    public abstract class CharacterDecorator : Character
+    public abstract class CharacterDecorator : IWarUnit
     {
-        protected readonly Character _innerCharacter;
+        protected IWarUnit _innerUnit;
 
-        protected CharacterDecorator(Character innerCharacter)
+        protected CharacterDecorator(IWarUnit innerUnit)
         {
-            _innerCharacter = innerCharacter;
-            Weapon = innerCharacter.Weapon;
-            Movement = innerCharacter.Movement;
-            Name = innerCharacter.Name;
-            Health = innerCharacter.Health;
-            X = innerCharacter.X;
-            Y = innerCharacter.Y;
-        }
-        public override char MapSymbol => _innerCharacter.MapSymbol;
-        public Character InnerCharacter => _innerCharacter;
-
-        public override void TakeDamage(int damage)
-        {
-            _innerCharacter.TakeDamage(damage);
-            Health = _innerCharacter.Health;
+            _innerUnit = innerUnit;
         }
 
-        public override Character Clone()
+        public virtual string Name => _innerUnit.Name;
+        public virtual int Health => _innerUnit.Health;
+        public virtual char MapSymbol => _innerUnit.MapSymbol;
+        public virtual int X => _innerUnit.X;
+        public virtual int Y => _innerUnit.Y;
+        public virtual bool IsAlive => _innerUnit.IsAlive;
+
+        public IWarUnit InnerUnit => _innerUnit;
+
+        public virtual void MoveBy(int deltaX, int deltaY, int mapWidth, int mapHeight, IEnumerable<IWarUnit>? activeUnits = null)
         {
-            var clonedInner = _innerCharacter.Clone();
-            return ApplySpecificDecorator(clonedInner);
+            _innerUnit.MoveBy(deltaX, deltaY, mapWidth, mapHeight, activeUnits);
         }
 
-        protected abstract Character ApplySpecificDecorator(Character character);
+        public virtual void TakeDamage(int damage)
+        {
+            var context = new DamageContext(
+                Target: this,
+                RawDamage: damage,
+                CalculatedDamage: damage
+            );
+
+            IHandler? pipeline = BuildDamagePipeline();
+            if (pipeline != null)
+            {
+                pipeline.Handle(context);
+            }
+            else
+            {
+                _innerUnit.TakeDamage(damage);
+            }
+        }
+
+        public virtual IHandler? BuildDamagePipeline()
+        {
+            IHandler? innerPipeline = _innerUnit.BuildDamagePipeline();
+            IHandler? decoratorHandler = GetDecoratorHandler();
+
+            if (decoratorHandler == null) return innerPipeline;
+            if (innerPipeline == null) return decoratorHandler;
+
+            decoratorHandler.SetNext(innerPipeline);
+            return decoratorHandler;
+        }
+
+        protected abstract IHandler? GetDecoratorHandler();
+
+        public IEnumerable<IWarUnit> GetFlattenedUnits()
+        {
+            return _innerUnit.GetFlattenedUnits();
+        }
     }
 }

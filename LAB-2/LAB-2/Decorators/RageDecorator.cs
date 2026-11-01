@@ -1,5 +1,7 @@
 ﻿using LAB_2.Decorators;
+using LAB_2.Interfaces;
 using LAB_2.Model.Characters;
+using System;
 
 namespace LAB_2.Model.Decorators
 {
@@ -7,16 +9,30 @@ namespace LAB_2.Model.Decorators
     {
         private readonly int _bonusDamage;
 
-        public RageDecorator(Character innerCharacter, int bonusDamage = 5) : base(innerCharacter)
+        public RageDecorator(IWarUnit innerUnit, int bonusDamage = IBattleConstants.DefaultRageBonusDamage)
+            : base(innerUnit)
         {
             _bonusDamage = bonusDamage;
-            Name = $"{innerCharacter.Name} [У люті]";
-            Weapon = new RageWeaponDecorator(innerCharacter.Weapon, _bonusDamage);
+            var baseCharacter = UnwrapToBaseCharacter(_innerUnit);
+            if (baseCharacter != null && baseCharacter.Weapon != null)
+            {
+                baseCharacter.Weapon = new RageWeaponDecorator(baseCharacter.Weapon, _bonusDamage);
+            }
+        }
+        public override string Name => $"{_innerUnit.Name} {IBattleLexems.RageSuffix}";
+
+        protected override IHandler? GetDecoratorHandler()
+        {
+            return null;
         }
 
-        protected override Character ApplySpecificDecorator(Character character)
+        private static Character? UnwrapToBaseCharacter(IWarUnit unit)
         {
-            return new RageDecorator(character, _bonusDamage);
+            while (unit is CharacterDecorator decorator)
+            {
+                unit = decorator.InnerUnit;
+            }
+            return unit as Character;
         }
     }
 }

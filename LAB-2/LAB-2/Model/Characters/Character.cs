@@ -1,6 +1,8 @@
-﻿using LAB_2.Interfaces;
+﻿using LAB_2.Handlers;
+using LAB_2.Interfaces;
 using LAB_2.Model.Movement;
 using LAB_2.Model.Weapon;
+using LAB_2.Records;
 using LAB_2.Service;
 using System;
 using System.Collections.Generic;
@@ -37,12 +39,46 @@ namespace LAB_2.Model.Characters
                 Console.WriteLine($"{Name} не дістає до {target.Name} (Радіус зброї: {Weapon.Range})");
             }
         }
+        public void MoveBy(int deltaX, int deltaY, int mapWidth, int mapHeight, IEnumerable<IWarUnit>? activeUnits = null)
+        {
+            int newX = Math.Clamp(X + deltaX, 0, mapWidth - 1);
+            int newY = Math.Clamp(Y + deltaY, 0, mapHeight - 1);
+
+            if (activeUnits != null)
+            {
+                bool isOccupied = activeUnits
+                    .SelectMany(u => u.GetFlattenedUnits())
+                    .Any(u => u.IsAlive && u != this && u.X == newX && u.Y == newY);
+
+                if (isOccupied) return;
+            }
+
+            X = newX;
+            Y = newY;
+        }
 
         public virtual void TakeDamage(int rawDamage)
         {
-            Health -= rawDamage;
-            if (Health < 0) Health = 0;
-            Console.WriteLine($"   -> {Name} отримує {rawDamage} шкоди! (Залишилось HP: {Health})");
+            var context = new DamageContext(
+                Target: this,
+                RawDamage: rawDamage,
+                CalculatedDamage: rawDamage
+            );
+
+            IHandler? pipeline = BuildDamagePipeline();
+            if (pipeline != null)
+            {
+                pipeline.Handle(context);
+            }
+            else
+            {
+                Health = Math.Max(0, Health - rawDamage);
+                Console.WriteLine($"   -> {Name} отримує {rawDamage} шкоди! (Залишилось HP: {Health})");
+            }
+        }
+        public virtual IHandler BuildDamagePipeline()
+        { 
+            return new BaseHealthDamageHandler();
         }
         public IEnumerable<IWarUnit> GetFlattenedUnits()
         {
