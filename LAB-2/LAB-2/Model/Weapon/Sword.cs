@@ -9,6 +9,7 @@ namespace LAB_2.Model.Weapon
     public class Sword:BaseWeapon
     {
         public override string Name => "Меч Лицара";
+        public override WeaponType Type => WeaponType.Sword;
         public override int Damage => 25;
 
         public override int Range => 2;

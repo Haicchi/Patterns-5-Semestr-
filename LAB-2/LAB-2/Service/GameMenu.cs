@@ -1,4 +1,5 @@
-﻿using LAB_2.Model;
+﻿using LAB_2.Memento;
+using LAB_2.Model;
 using LAB_2.Model.Characters;
 using System;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace LAB_2.Service
                 Console.WriteLine("║ 5. Інформація про глав рас                           ║");
                 Console.WriteLine("║ 6. Викликати підкріплення                            ║");
                 Console.WriteLine("║ 7. РОЗПОЧАТИ БІЙ                                     ║");
+                Console.WriteLine("║ 8. ЗАВАНТАЖИТИ СЛОТ ЗБЕРЕЖЕННЯ                   ║");
                 Console.WriteLine("║ 0. Вихід                                             ║");
                 Console.WriteLine("╚══════════════════════════════════════════════════════╝");
                 Console.Write("Ваш вибір: ");
@@ -46,15 +48,15 @@ namespace LAB_2.Service
                         break;
 
                     case "3":
-                        _clan.PrintTextReport();
+                        _clan?.PrintTextReport();
                         break;
 
                     case "4":
-                        _clan.DrawBattlefieldMap();
+                        _clan?.DrawBattlefieldMap();
                         break;
 
                     case "5":
-                        _clan.DisplayLeadersReport();
+                        _clan?.DisplayLeadersReport();
                         break;
 
                     case "6":
@@ -62,7 +64,11 @@ namespace LAB_2.Service
                         break;
 
                     case "7":
-                        _battleEngine.StartCivilWar(_clan);
+                        StartBattleDialogue();
+                        break;
+
+                    case "8":
+                        LoadSaveSlotDialogue();
                         break;
 
                     case "0":
@@ -76,6 +82,69 @@ namespace LAB_2.Service
             }
         }
 
+        private void StartBattleDialogue()
+        {
+            if (_clan == null || !_clan.Members.Any(m => m.Health > 0))
+            {
+                Console.WriteLine("Неможливо розпочати бій: клан не створено або в ньому немає живих бійців!");
+                return;
+            }
+
+            var caretaker = new Caretaker(_battleEngine, _clan);
+
+            Console.WriteLine("\n--- НАЛАШТУВАННЯ РЕЖИМУ БОЮ ---");
+            Console.WriteLine("Оберіть расу для ручного керування бійцями:");
+            Console.WriteLine(" [1] Воїни (Warriors)");
+            Console.WriteLine(" [2] Ельфи (Elves)");
+            Console.WriteLine(" [3] Гноми (Dwarves)");
+            Console.WriteLine(" [0] Повністю автоматичний бій");
+            Console.Write("Ваш вибір: ");
+
+            string choice = Console.ReadLine()?.Trim() ?? "0";
+            Type? playerRace = choice switch
+            {
+                "1" => typeof(Warrior),
+                "2" => typeof(Elf),
+                "3" => typeof(Dwarf),
+                _ => null
+            };
+
+            _battleEngine.StartCivilWar(_clan, playerRaceType: playerRace, caretaker: caretaker);
+        }
+
+        private void LoadSaveSlotDialogue()
+        {
+            var slots = Caretaker.GetAllSaveSlots();
+
+            if (!slots.Any())
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nНе знайдено жодного збереженого слота в папці saves/!");
+                Console.ResetColor();
+                return;
+            }
+
+            Console.WriteLine("\n=== ДОСТУПНІ СЛОТИ ЗБЕРЕЖЕННЯ ===");
+            for (int i = 0; i < slots.Count; i++)
+            {
+                var s = slots[i];
+                Console.WriteLine($"[{i + 1}] Слот: «{s.SlotName}» | Клан: {s.ClanName} | Раунд: {s.BattleState?.Round} | Дата: {s.SaveTime:yyyy-MM-dd HH:mm}");
+            }
+
+            Console.Write("\nОберіть номер слота для завантаження (або 0 для скасування): ");
+            if (int.TryParse(Console.ReadLine(), out int idx) && idx > 0 && idx <= slots.Count)
+            {
+                var selectedSlot = slots[idx - 1];
+
+                _clan ??= _initializer.CreateClan(selectedSlot.ClanName, 18, 9);
+                var caretaker = new Caretaker(_battleEngine, _clan);
+
+                if (caretaker.LoadFromSlot(selectedSlot, out Type? playerRace))
+                {
+                    _battleEngine.StartCivilWar(_clan, playerRaceType: playerRace, caretaker: caretaker);
+                }
+            }
+        }
 
         private void CreateCustomClanDialogue()
         {

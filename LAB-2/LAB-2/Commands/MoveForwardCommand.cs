@@ -5,8 +5,8 @@ using LAB_2.Model.Characters;
 
 public class MoveForwardCommand : ICommand
 {
-    private readonly IWarUnit _targetEnemy;
-    private readonly IEnumerable<IWarUnit> _allUnits;
+    private IWarUnit _targetEnemy;
+    private IEnumerable<IWarUnit> _allUnits;
 
     public string Name => "Вперед (Наступ)";
 

@@ -9,6 +9,7 @@ namespace LAB_2.Model.Weapon
     public class BattleAxe:BaseWeapon
     {
         public override string Name => "Бойова Сокира";
+        public override WeaponType Type => WeaponType.BattleAxe;
         public override int Damage => 25;
 
         public override int Range => 2;

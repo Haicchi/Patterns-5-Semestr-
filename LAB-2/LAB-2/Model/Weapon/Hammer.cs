@@ -9,6 +9,8 @@ namespace LAB_2.Model.Weapon
     public class Hammer:BaseWeapon
     {
         public override string Name => "Бойовий Молот";
+
+        public override WeaponType Type => WeaponType.Hammer;
         public override int Damage => 35;
 
         public override int Range => 1;

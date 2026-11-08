@@ -4,6 +4,7 @@ using LAB_2.Model.Movement;
 using LAB_2.Model.Weapon;
 using LAB_2.Records;
 using LAB_2.Service;
+using LAB_2.State;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -20,6 +21,8 @@ namespace LAB_2.Model.Characters
         public int X { get; set; }
         public int Y { get; set; }        
         public bool IsAlive => Health > 0;
+
+        private UnitState _state = null!;
 
         public IWeapon Weapon { get; set; } = null!;
         public IMovement Movement { get; set; } = null!;
@@ -73,7 +76,7 @@ namespace LAB_2.Model.Characters
             else
             {
                 Health = Math.Max(0, Health - rawDamage);
-                Console.WriteLine($"   -> {Name} отримує {rawDamage} шкоди! (Залишилось HP: {Health})");
+                Console.WriteLine($"{Name} отримує {rawDamage} шкоди! (Залишилось HP: {Health})");
             }
         }
         public virtual IHandler BuildDamagePipeline()
@@ -87,7 +90,54 @@ namespace LAB_2.Model.Characters
                 yield return this;
             }
         }
+        public IBattleMemento Save()
+        {
+            return new CharacterMemento(
+                Name,
+                Health,
+                X,
+                Y,
+                CurrentState.GetType().AssemblyQualifiedName,
+                CurrentState.Duration
+            );
+        }
+        public void Restore(CharacterMemento memento)
+        {
+            Health = memento.Health;
+            X = memento.X;
+            Y = memento.Y;
+            if (!string.IsNullOrEmpty(memento.StateTypeName) &&
+                Type.GetType(memento.StateTypeName) is Type stateType &&
+                Activator.CreateInstance(stateType) is UnitState restoredState)
+            {
+                restoredState.Duration = memento.StateDuration;
+                TransitionTo(restoredState);
+            }
+            else
+            {
+                TransitionTo(new NormalState());
+            }
+        }
+        public Character()
+        {
+            TransitionTo(new NormalState());
+        }
+        public void TransitionTo(UnitState state)
+        {
+            _state = state;
+            _state.SetContext(this);
 
+            if (_state is not NormalState)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"[{Name}] переходить у стан: {_state.Name} (тривалість: {_state.Duration} хід/ходи)!");
+                Console.ResetColor();
+            }
+        }
+        public UnitState CurrentState => _state;
+        public void OnTurnStart() => _state.OnTurnStart();
+        public bool CanTakeTurn() => _state.CanTakeTurn();
+        public void OnTurnEnd() => _state.OnTurnEnd();
         public virtual Character Clone() => (Character)this.MemberwiseClone();
     }
 }

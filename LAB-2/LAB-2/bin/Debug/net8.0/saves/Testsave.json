@@ -1,0 +1,31 @@
+{
+  "SlotName": "Testsave",
+  "SaveTime": "2026-11-07T14:46:28.6086889+02:00",
+  "ClanName": "\u041F\u0456\u0432\u043D\u0456\u0447\u043D\u0456 \u0412\u043E\u0432\u043A\u0438",
+  "PlayerRaceTypeName": "LAB_2.Model.Characters.Warrior, LAB-2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "BattleState": {
+    "Round": 1,
+    "UnitMementos": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "SavedAt": "2026-11-07T14:46:28.6086853+02:00"
+  }
+}

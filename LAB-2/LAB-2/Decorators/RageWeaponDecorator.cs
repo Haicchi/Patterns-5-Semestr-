@@ -1,4 +1,5 @@
 ﻿using LAB_2.Interfaces;
+using LAB_2.Model.Weapon;
 
 namespace LAB_2.Decorators
 {
@@ -6,7 +7,7 @@ namespace LAB_2.Decorators
     {
         private readonly IWeapon _innerWeapon;
         private readonly int _bonusDamage;
-
+        public WeaponType Type => _innerWeapon.Type;
         public RageWeaponDecorator(IWeapon innerWeapon, int bonusDamage)
         {
             _innerWeapon = innerWeapon;

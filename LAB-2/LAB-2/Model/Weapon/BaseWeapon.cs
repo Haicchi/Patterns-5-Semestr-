@@ -15,6 +15,8 @@ namespace LAB_2.Model.Weapon
 
         public abstract int Range {  get;}
 
+        public abstract WeaponType Type { get;}
+
         public virtual void Attack(int ax, int ay, int tx, int ty)
         {
             Console.WriteLine($" б'є зброєю {Name} на {Damage} шкоди!");

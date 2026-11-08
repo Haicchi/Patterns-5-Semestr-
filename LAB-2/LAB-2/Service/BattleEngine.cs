@@ -3,8 +3,10 @@ using LAB_2.Decorators;
 using LAB_2.Enums;
 using LAB_2.Interfaces;
 using LAB_2.Mediator;
+using LAB_2.Memento;
 using LAB_2.Model;
 using LAB_2.Model.Characters;
+using LAB_2.Records;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,43 +17,96 @@ namespace LAB_2.Service
     public class BattleEngine
     {
         private readonly ClanLeaderCommander _commander = new();
+        private readonly PlayerTurnController _playerController;
+        private int _currentRound = 1;
 
-        public void StartCivilWar(Clan clan)
+        public int CurrentRound => _currentRound;
+
+        public BattleEngine()
+        {
+            _playerController = new PlayerTurnController(_commander);
+        }
+
+        public void StartCivilWar(Clan clan, Type? playerRaceType = null, Caretaker? caretaker = null)
         {
             Console.Clear();
-            Console.WriteLine($"ПОЧАТОК БИТВИ В СЕРЕДИНІ КЛАНУ «{clan.Name}» ⚔️\nРаси зійшлися в турнірному поєдинку за абсолютну владу!\n");
+            Console.WriteLine($"ПОЧАТОК БИТВИ В СЕРЕДИНІ КЛАНУ «{clan.Name}» \nРаси зійшлися в турнірному поєдинку за абсолютну владу!\n");
+
+            if (playerRaceType != null)
+            {
+                Console.WriteLine($"Ви керуєте расою: {playerRaceType.Name.ToUpper()}\n");
+            }
 
             IBattleMediator mediator = new BattleMediator(clan);
             CombatService combatService = new(mediator);
 
-            for (int round = 1; GetAliveRacesCount(clan.Units) > 1 && round <= 30; round++)
+            for (_currentRound = 1; GetAliveRacesCount(clan.Units) > 1 && _currentRound <= 30; _currentRound++)
             {
-                Console.WriteLine($"\n--- РАУНД {round} ---");
+                Console.WriteLine($"\n--- РАУНД {_currentRound} ---");
                 mediator.Notify(this, BattleEvent.RoundStarted);
 
-                foreach (var attacker in clan.Units.SelectMany(u => u.GetFlattenedUnits()).Where(m => m.IsAlive).ToList())
+                var activeUnits = clan.Units
+                    .SelectMany(u => u.GetFlattenedUnits())
+                    .Where(m => m.IsAlive)
+                    .ToList();
+
+                foreach (var attacker in activeUnits)
                 {
                     if (!attacker.IsAlive) continue;
 
                     var type = GetRaceType(attacker);
-                    var target = clan.Units.SelectMany(u => u.GetFlattenedUnits())
-                        .Where(m => m.IsAlive && GetRaceType(m) != type)
-                        .MinBy(m => Dist(attacker.X, attacker.Y, m.X, m.Y));
-
-                    if (target == null) break;
-
                     var baseChar = Unwrap(attacker);
-                    var leader = GetLeader(type);
-                    int dist = Dist(attacker.X, attacker.Y, target.X, target.Y);
 
-                    ICommand cmd = (baseChar?.Health < IBattleConstants.MaxAllowedHealth / 2 && leader is { IsAlive: true } && leader != attacker)
-                        ? new MoveBackCommand(leader, clan.Units)
-                        : dist <= (baseChar?.Weapon?.Range ?? 1)
-                            ? new AttackCommand(target, combatService)
-                            : new MoveForwardCommand(target, clan.Units);
+                    if (playerRaceType != null && type == playerRaceType)
+                    {
+                        _playerController.ProcessTurn(
+                            attacker,
+                            baseChar,
+                            clan,
+                            combatService,
+                            mediator,
+                            caretaker
+                        );
+                    }
+                    else
+                    {
+                        if (baseChar != null)
+                        {
+                            baseChar.OnTurnStart();
 
-                    _commander.IssueCommand(cmd, attacker, clan.MapWidth, clan.MapHeight);
-                    Thread.Sleep(120);
+                            if (!baseChar.IsAlive) continue;
+
+                            if (!baseChar.CanTakeTurn())
+                            {
+                                Console.ForegroundColor = ConsoleColor.Magenta;
+                                Console.WriteLine($"[{baseChar.Name}] пропускає хід через статус: {baseChar.CurrentState.Name}");
+                                Console.ResetColor();
+
+                                baseChar.OnTurnEnd();
+                                continue;
+                            }
+                        }
+
+                        var target = clan.Units.SelectMany(u => u.GetFlattenedUnits())
+                            .Where(m => m.IsAlive && GetRaceType(m) != type)
+                            .MinBy(m => Dist(attacker.X, attacker.Y, m.X, m.Y));
+
+                        if (target == null) break;
+
+                        var leader = GetLeader(type);
+                        int dist = Dist(attacker.X, attacker.Y, target.X, target.Y);
+
+                        ICommand cmd = (baseChar?.Health < IBattleConstants.MaxAllowedHealth / 2 && leader is { IsAlive: true } && leader != attacker)
+                            ? new MoveBackCommand(leader, clan.Units)
+                            : dist <= (baseChar?.Weapon?.Range ?? 1)
+                                ? new AttackCommand(target, combatService)
+                                : new MoveForwardCommand(target, clan.Units);
+
+                        _commander.IssueCommand(cmd, attacker, clan.MapWidth, clan.MapHeight);
+
+                        baseChar?.OnTurnEnd();
+                        Thread.Sleep(120);
+                    }
                 }
 
                 clan.DrawBattlefieldMap();
@@ -60,6 +115,40 @@ namespace LAB_2.Service
             }
 
             AnnounceWinner(clan.Units);
+        }
+
+        public IBattleMemento Save(Clan clan)
+        {
+            var unitMementos = clan.Units
+                .SelectMany(u => u.GetFlattenedUnits())
+                .Select(Unwrap)
+                .Where(c => c != null)
+                .Select(c => (CharacterMemento)c!.Save())
+                .ToList();
+
+            return new BattleMemento(_currentRound, unitMementos);
+        }
+
+        public void Restore(Clan clan, IBattleMemento memento)
+        {
+            if (memento is not BattleMemento concrete)
+            {
+                throw new ArgumentException($"Невідомий клас знімка бою: {memento}");
+            }
+
+            _currentRound = concrete.Round;
+            var characters = clan.Units
+                .SelectMany(u => u.GetFlattenedUnits())
+                .Select(Unwrap)
+                .Where(c => c != null)
+                .ToList();
+
+            for (int i = 0; i < characters.Count && i < concrete.UnitMementos.Count; i++)
+            {
+                characters[i]!.Restore(concrete.UnitMementos[i]);
+            }
+
+            Console.WriteLine($"Стан клану «{clan.Name}» відновлено до раунду {_currentRound}.");
         }
 
         private static Type GetRaceType(IWarUnit u) => Unwrap(u)?.GetType() ?? u.GetType();

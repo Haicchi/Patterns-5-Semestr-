@@ -1,6 +1,7 @@
 ﻿using LAB_2.Decorators;
 using LAB_2.Interfaces;
 using LAB_2.Model.Characters;
+using LAB_2.Model.Weapon; 
 using LAB_2.Service;
 using System;
 
@@ -29,6 +30,7 @@ namespace LAB_2.Commands
             int weaponRange = baseAttacker?.Weapon?.Range ?? 1;
             int weaponDamage = baseAttacker?.Weapon?.Damage ?? 10;
             string weaponName = baseAttacker?.Weapon?.Name ?? "Рукопашна";
+            WeaponType weaponType = baseAttacker?.Weapon?.Type ?? WeaponType.Sword; 
 
             bool attacked = _combatService.TryExecuteAttack(
                 attacker,
@@ -36,7 +38,8 @@ namespace LAB_2.Commands
                 weaponDamage,
                 distance,
                 weaponRange,
-                weaponName
+                weaponName,
+                weaponType 
             );
 
             if (!attacked)

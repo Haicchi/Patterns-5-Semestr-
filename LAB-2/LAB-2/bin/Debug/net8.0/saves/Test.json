@@ -1,0 +1,31 @@
+{
+  "SlotName": "Test",
+  "SaveTime": "2026-11-07T14:46:01.9253305+02:00",
+  "ClanName": "\u041F\u0456\u0432\u043D\u0456\u0447\u043D\u0456 \u0412\u043E\u0432\u043A\u0438",
+  "PlayerRaceTypeName": "LAB_2.Model.Characters.Dwarf, LAB-2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "BattleState": {
+    "Round": 1,
+    "UnitMementos": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "SavedAt": "2026-11-07T14:46:01.9251069+02:00"
+  }
+}

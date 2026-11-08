@@ -70,7 +70,7 @@ namespace LAB_2.Mediator
 
             if (ctrl.IsReady && ctrl.TryActivate())
             {
-                Console.WriteLine($"[АУРА] Лідер раси {typeof(T).Name} ({leader.Name}) активував бойову ауру!");
+                Console.WriteLine($"Лідер раси {typeof(T).Name} ({leader.Name}) активував бойову ауру!");
             }
 
             if (ctrl.IsActive)
@@ -107,7 +107,7 @@ namespace LAB_2.Mediator
 
             if (IsRaceLeader(deadUnit, raceType))
             {
-                Console.WriteLine($"\n🏳️ [MEDIATOR] Лідер раси {raceType.Name} поліг! Загін охоплений панікою!");
+                Console.WriteLine($"\nЛідер раси {raceType.Name} поліг! Загін охоплений панікою!");
 
                 var survivors = _clan.Units
                     .SelectMany(u => u.GetFlattenedUnits())

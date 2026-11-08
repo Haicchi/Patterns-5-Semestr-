@@ -9,6 +9,7 @@ namespace LAB_2.Model.Weapon
     public class Bow:BaseWeapon
     {
         public override string Name => "Лук Мисливця";
+        public override WeaponType Type => WeaponType.Bow;
         public override int Damage => 15;
 
         public override int Range => 5;

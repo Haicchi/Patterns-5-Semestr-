@@ -9,6 +9,7 @@ namespace LAB_2.Model.Weapon
     public class IronKingHammer:BaseWeapon
     {
         public override string Name => "Молот Залізного Короля";
+        public override WeaponType Type => WeaponType.IronKingHammer;
         public override int Damage => 45;
 
         public override int Range => 1;

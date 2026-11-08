@@ -9,8 +9,8 @@ namespace LAB_2.Commands
 {
     public class MoveBackCommand : ICommand
     {
-        private readonly IWarUnit _leader;
-        private readonly IEnumerable<IWarUnit>? _activeUnits;
+        private IWarUnit _leader;
+        private IEnumerable<IWarUnit>? _activeUnits;
 
         public string Name => "Назад (Відступ до Лідера)";
 

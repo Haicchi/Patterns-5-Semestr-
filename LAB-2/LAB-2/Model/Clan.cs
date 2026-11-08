@@ -1,4 +1,5 @@
-﻿using LAB_2.Interfaces;
+﻿using LAB_2.Decorators;
+using LAB_2.Interfaces;
 using LAB_2.Model.Characters;
 using LAB_2.Service;
 using System;
@@ -144,31 +145,21 @@ namespace LAB_2.Model
             Console.WriteLine(new string('-', 85));
         }
 
-        public void DrawBattlefieldMap()
+        public void DrawBattlefieldMap(IWarUnit? activeUnit = null)
         {
             Console.WriteLine($"\n=== ПСЕВДОГРАФІЧНА КАРТА РОЗТАШУВАННЯ ФРОНТУ ({MapWidth}x{MapHeight}) ===");
             Console.WriteLine("Легенда: [W] - Воїн, [E] - Ельф, [D] - Гном, [*] - Лідер раси, [.] - Порожньо\n");
 
-            string[,] grid = new string[MapHeight, MapWidth];
-            for (int y = 0; y < MapHeight; y++)
-            {
-                for (int x = 0; x < MapWidth; x++)
-                {
-                    grid[y, x] = " . ";
-                }
-            }
+            // Розпаковуємо активного бійця до базового Character
+            var activeChar = Unwrap(activeUnit);
 
-            foreach (var m in Members)
-            {
-                if (m.X >= 0 && m.X < MapWidth && m.Y >= 0 && m.Y < MapHeight)
-                {
-                    bool isLeader = (RaceLeader<Warrior>.IsElected && RaceLeader<Warrior>.Instance.Leader == m) ||
-                                    (RaceLeader<Elf>.IsElected && RaceLeader<Elf>.Instance.Leader == m) ||
-                                    (RaceLeader<Dwarf>.IsElected && RaceLeader<Dwarf>.Instance.Leader == m);
-
-                    grid[m.Y, m.X] = isLeader ? $"*{m.MapSymbol}*" : $" {m.MapSymbol} ";
-                }
-            }
+            // Збираємо всіх живих персонажів із розпаковкою декораторів
+            var aliveCharacters = Units
+                .SelectMany(u => u.GetFlattenedUnits())
+                .Select(Unwrap)
+                .Where(c => c is { IsAlive: true })
+                .Distinct()
+                .ToList();
 
             Console.Write("   +");
             for (int x = 0; x < MapWidth; x++) Console.Write("---");
@@ -179,7 +170,36 @@ namespace LAB_2.Model
                 Console.Write($"{y,2} |");
                 for (int x = 0; x < MapWidth; x++)
                 {
-                    Console.Write(grid[y, x]);
+                    // Шукаємо бійця на клітинці (x, y)
+                    var m = aliveCharacters.FirstOrDefault(c => c!.X == x && c.Y == y);
+
+                    if (m != null)
+                    {
+                        bool isLeader = (RaceLeader<Warrior>.IsElected && RaceLeader<Warrior>.Instance.Leader == m) ||
+                                        (RaceLeader<Elf>.IsElected && RaceLeader<Elf>.Instance.Leader == m) ||
+                                        (RaceLeader<Dwarf>.IsElected && RaceLeader<Dwarf>.Instance.Leader == m);
+
+                        // Перевіряємо збіг за посиланням АБО за координатами з activeChar
+                        bool isActive = activeChar != null && (m == activeChar || (m.X == activeChar.X && m.Y == activeChar.Y));
+                        string cellSymbol = isLeader ? $"*{m.MapSymbol}*" : $" {m.MapSymbol} ";
+
+                        if (isActive)
+                        {
+                            // Вмикаємо яскраво-зелений фон для юніта, який зараз ходить
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            Console.Write(cellSymbol);
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.Write(cellSymbol);
+                        }
+                    }
+                    else
+                    {
+                        Console.Write(" . ");
+                    }
                 }
                 Console.WriteLine("|");
             }
@@ -214,6 +234,13 @@ namespace LAB_2.Model
             }
 
             Console.WriteLine("╚═══════════════════════════════════════════════════════════════════════════════════════╝\n");
+        }
+
+        private static Character? Unwrap(IWarUnit? u)
+        {
+            if (u == null) return null;
+            while (u is CharacterDecorator d) u = d.InnerUnit;
+            return u as Character;
         }
     }
 }

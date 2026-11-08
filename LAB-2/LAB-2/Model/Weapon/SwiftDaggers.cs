@@ -9,6 +9,7 @@ namespace LAB_2.Model.Weapon
     public class SwiftDaggers:BaseWeapon
     {
         public override string Name => "Ловчі Кинджали";
+        public override WeaponType Type => WeaponType.SwiftDaggers;
         public override int Damage => 20;
 
         public override int Range => 1;
